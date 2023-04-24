@@ -32,7 +32,7 @@ template <typename T>
 T loadObject(string filename, T object_to_load)
 {
     ifstream infile;
-    infile.open("silly.dat", ios::binary | ios::in)
+    infile.open("silly.dat", ios::binary | ios::in);
     infile.read(&object_to_load, sizeof(object_to_load));
     return object_to_load;
 }
