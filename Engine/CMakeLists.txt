@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
-message(LIB_DIR)
+message("Library path: ${LIB_DIR}")
 
 # Add source files
 set(SOURCES
