@@ -4,36 +4,37 @@ project(TextBasedGameEngine)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 # Add source files
 set(SOURCES
-    src/achievements/achievement.cpp
-    src/achievements/achievement.h
+    ${LIB_DIR}/achievements/achievement.cpp
+    ${LIB_DIR}/achievements/achievement.h
 
-    src/command/command.h
+    ${LIB_DIR}/command/command.h
     
-    src/item/item.cpp
-    src/item/item.h
+    ${LIB_DIR}/item/item.cpp
+    ${LIB_DIR}/item/item.h
     
-    src/player/inventory.cpp
-    src/player/inventory.h
-    src/player/player.cpp
-    src/player/player.h
+    ${LIB_DIR}/player/inventory.cpp
+    ${LIB_DIR}/player/inventory.h
+    ${LIB_DIR}/player/player.cpp
+    ${LIB_DIR}/player/player.h
     
-    src/map/node.cpp
-    src/map/node.h
-    src/map/map.cpp
-    src/map/map.h
+    ${LIB_DIR}/map/node.cpp
+    ${LIB_DIR}/map/node.h
+    ${LIB_DIR}/map/map.cpp
+    ${LIB_DIR}/map/map.h
     
-    src/progress/progress.h
-    src/progress/progress.cpp
+    ${LIB_DIR}/progress/progress.h
+    ${LIB_DIR}/progress/progress.cpp
     
-    src/utils/prompt.cpp
-    src/utils/prompt.h
-    src/utils/game_utils.h
-    src/utils/game_utils.cpp
+    ${LIB_DIR}/utils/prompt.cpp
+    ${LIB_DIR}/utils/prompt.h
+    ${LIB_DIR}/utils/game_utils.h
+    ${LIB_DIR}/utils/game_utils.cpp
 
-    src/main.cpp
+    ${LIB_DIR}/main.cpp
 )
 
 
