@@ -19,15 +19,15 @@ class Save{
     public:
         Inventory *inventory;
         int day;
-        AchievementCollection *ac;
+        // AchievementCollection *ac;
         Node *room;
         unordered_map<std::string, std::string> hash;
         
         ~Save(){}
-        Save(Inventory *inventory, int day, AchievementCollection *ac, Node *room){
+        Save(Inventory *inventory, int day, /*AchievementCollection *ac,*/ Node *room){
             this->inventory = inventory;
             this->day = day;
-            this->ac = ac;
+            // this->ac = ac;
             this->room = room;
 
             this->hash = createHashTable();
