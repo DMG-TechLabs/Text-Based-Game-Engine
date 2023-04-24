@@ -7,7 +7,7 @@ set(MY_LIBRARY_PATH "..")
 
 set(LIB_DIR "Engine/src")
 
-message("Library path: ${LIB_DIR}")
+message("Library path: ${MY_LIBRARY_PATH}/${LIB_DIR}")
 
 # Add source files
 set(SOURCES
