@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 	
 project(TextBasedGameEngine)
-
 set(CMAKE_CXX_STANDARD 11)
+
+set(MY_LIBRARY_PATH "..")
 
 set(LIB_DIR "Engine/src")
 
@@ -10,33 +11,33 @@ message("Library path: ${LIB_DIR}")
 
 # Add source files
 set(SOURCES
-    ../${LIB_DIR}/achievements/achievement.cpp
-    ../${LIB_DIR}/achievements/achievement.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/achievements/achievement.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/achievements/achievement.h
 
-    ../${LIB_DIR}/command/command.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/command/command.h
     
-    ../${LIB_DIR}/item/item.cpp
-    ../${LIB_DIR}/item/item.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/item/item.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/item/item.h
     
-    ../${LIB_DIR}/player/inventory.cpp
-    ../${LIB_DIR}/player/inventory.h
-    ../${LIB_DIR}/player/player.cpp
-    ../${LIB_DIR}/player/player.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/player/inventory.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/player/inventory.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/player/player.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/player/player.h
     
-    ../${LIB_DIR}/map/node.cpp
-    ../${LIB_DIR}/map/node.h
-    ../${LIB_DIR}/map/map.cpp
-    ../${LIB_DIR}/map/map.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.h
     
-    ../${LIB_DIR}/progress/progress.h
-    ../${LIB_DIR}/progress/progress.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.cpp
     
-    ../${LIB_DIR}/utils/prompt.cpp
-    ../${LIB_DIR}/utils/prompt.h
-    ../${LIB_DIR}/utils/game_utils.h
-    ../${LIB_DIR}/utils/game_utils.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/prompt.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/prompt.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.cpp
 
-    ../${LIB_DIR}/main.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/main.cpp
 )
 
 
