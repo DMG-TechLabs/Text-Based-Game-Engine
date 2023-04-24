@@ -1,3 +1,8 @@
+/.vscode/
+/Engine/.vscode/
+/Engine/build/
+
+
 # Prerequisites
 *.d
 
