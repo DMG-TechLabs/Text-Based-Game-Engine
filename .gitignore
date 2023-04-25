@@ -1,7 +1,7 @@
 /.vscode/
 /Engine/.vscode/
 /Engine/build/
-
+/Engine/CMakeLists.txt
 
 # Prerequisites
 *.d
