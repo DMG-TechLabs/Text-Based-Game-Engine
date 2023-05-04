@@ -26,8 +26,6 @@ set(SOURCES
     
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.h
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.cpp
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.h
     
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.cpp
