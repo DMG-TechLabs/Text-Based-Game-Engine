@@ -32,6 +32,12 @@ class Player{
             this -> stats = stats;
             this -> currentNode = currentNode;
         }
+        Player(Inventory inventory, string name, vector<string> commands, vector<int> stats){
+            this -> inventory = inventory;
+            this -> name = name;
+            this -> commands = commands;
+            this -> stats = stats;
+        }
 
         //Setters getters
         void setInventory(Inventory inventory);
