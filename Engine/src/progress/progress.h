@@ -7,7 +7,7 @@
 
 #include "../player/inventory.h"
 #include "../achievements/achievement.h"
-#include "../map/node.h"
+#include "../node/node.h"
 #include "../utils/game_utils.h"
 
 using namespace std;

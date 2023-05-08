@@ -24,6 +24,7 @@ vector<int> Player::getStats(){
 void Player::setCurrentNode(Node *newNode){
     this->currentNode = newNode;
 }
+
 /*
 void Node::moveNode(Node *newNode, Node *oldNode){
     

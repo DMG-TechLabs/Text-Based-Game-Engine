@@ -24,8 +24,11 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/player/player.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/player/player.h
     
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.cpp
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/node.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/node/node.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/node/node.h
+
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/movement/movement.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/movement/movement.h
     
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.cpp

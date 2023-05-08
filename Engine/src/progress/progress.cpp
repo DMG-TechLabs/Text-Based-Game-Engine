@@ -5,7 +5,7 @@ unordered_map<std::string, std::string> Save::createHashTable(){
         {"inventory", this->inventory->exportContents()},
         {"day", to_string(this->day)},
         /*{"achievements", this->ac->exportAchievements()},*/
-        {"room", to_string(this->room->number)}
+        {"room", to_string(this->room->id)}
     };
 
     return u;

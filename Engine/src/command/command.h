@@ -5,6 +5,12 @@
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include <cstdarg>
+#include "../item/item.h"
+#include "../player/player.h"
+#include "../node/node.h"
+#include "../utils/prompt.h"
+#include "../utils/game_utils.h"
 
 #include "../item/item.h"
 #include "../map/node.h"
