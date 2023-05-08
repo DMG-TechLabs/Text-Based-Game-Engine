@@ -1,7 +1,7 @@
 #pragma once
 
 #include "inventory.h"
-#include "../map/node.h"
+#include "../node/node.h"
 #include <iostream>
 #include <string>
 #include <vector>

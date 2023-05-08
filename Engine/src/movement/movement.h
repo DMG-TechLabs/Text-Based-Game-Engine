@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../map/node.h"
+#include "../node/node.h"
 #include "../player/player.h"
 
 /**

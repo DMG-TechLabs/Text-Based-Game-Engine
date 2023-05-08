@@ -3,7 +3,7 @@
 #include "achievements/achievement.h"
 #include "command/command.h"
 #include "item/item.h"
-#include "map/node.h"
+#include "node/node.h"
 #include "player/inventory.h"
 #include "player/player.h"
 #include "progress/progress.h"
