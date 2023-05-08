@@ -10,27 +10,32 @@ using namespace std;
  */
 class Inventory {
     private:
-        Item* inventory[32];
+        // Item* inventory[32];
+        // vector<Item> items;
         
     public:
+        vector<Item> items;
         //Constructors 
         Inventory(){};
         ~Inventory(){};
-        Inventory(Item* inventory[]){
-            for (int i = 0; i < 32; i++){
-                this -> inventory[i] = inventory[i];
-            }
+        Inventory(vector<Item> items){
+            this->items = items;
         };
         
         //Getters
-        Item* getInventory();
+        vector<Item> getItems();
+        void addItem(Item item){
+            items.push_back(item);
+        }
 
         //Auxilary methods
-        void addItem(Item* inventory[], Item* item);
-        Item* getItem(Item* inventory[], Item* item);
-        string* getStacks(Item inventory[], string items[]);
+        Item getItem(string id);
+        int getQuantity(Item item);
+        int getQuantity(string id);
         
         //For progress
         string exportContents();
         void importContents();
+
+        void printInventory();
 };
