@@ -16,8 +16,8 @@ class Node{
         //Class variables
         int number;
         string description;
-        vector<Item> *items;
-        vector<Node> *accesible_nodes;
+        vector<Item*> items;
+        vector<Node*> accesible_nodes;
         bool accesible;
         bool inside;
 
@@ -27,7 +27,7 @@ class Node{
         ~Node(){}
 
         //Constructor for rooms/hallways
-        Node(int number, string description, vector<Item> *items, vector<Node> *accesible_nodes, bool accesible, bool inside){
+        Node(int number, string description, vector<Item*> items, vector<Node*> accesible_nodes, bool accesible, bool inside){
             this-> number = number;
             this-> description = description; 
             this-> items = items;
