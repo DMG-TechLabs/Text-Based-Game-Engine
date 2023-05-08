@@ -13,7 +13,7 @@
 #include "../utils/game_utils.h"
 
 #include "../item/item.h"
-#include "../map/node.h"
+#include "../node/node.h"
 #include "../player/player.h"
 #include "../utils/game_utils.h"
 #include "../utils/prompt.h"
