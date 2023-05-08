@@ -18,8 +18,6 @@ class Player{
         string name;
         vector<int> stats;
         vector<string> commands;
-        //Node *currentNode = new Node();
-
     public:
         Node *currentNode = new Node();
         //Constructors
@@ -55,5 +53,5 @@ class Player{
          * 
          * @param newNode The node the player tries to move to
          */
-        void moveNode(Node *newNode, Node *oldNode);
+        //void moveNode(Node *newNode, Node *oldNode);
 };
