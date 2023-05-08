@@ -7,9 +7,14 @@
 
 using namespace std;
 
+struct Response{
+    string command;
+    vector<string> args;
+};
 
-string* prompt(char prompt_char, string *accepted_commands);
-string* prompt(char prompt_char, string message, string *accepted_commands);
+
+Response prompt(char prompt_char, string accepted_commands[], vector<string> game_commands = {});
+Response prompt(char prompt_char, string message, string accepted_commands[], vector<string> game_commands = {});
 
 void print(string message);
 void print(int message);

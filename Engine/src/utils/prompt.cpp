@@ -23,6 +23,18 @@ bool contains(string *arr, string str) {
     return exists;
 }
 
+bool contains(vector<string> arr, string str) {
+    bool exists = false;
+    for (int i = 0; i < arr.size(); i++) {
+        if (str == arr.at(i)) {
+            exists = true;
+            break;
+        }
+    }
+
+    return exists;
+}
+
 int itemsLength(Item **items) {
     int length_counter = 0;
     while (items[length_counter]) length_counter++;
@@ -32,11 +44,11 @@ int itemsLength(Item **items) {
 
 /* ============={End of Utils}============= */
 
-string *prompt(char prompt_char, string *accepted_commands) {
-    return prompt(prompt_char, "", accepted_commands);
+Response prompt(char prompt_char, string accepted_commands[], vector<string> game_commands) {
+    return prompt(prompt_char, "", accepted_commands, game_commands);
 }
 
-string *prompt(char prompt_char, string message, string *accepted_commands) {
+Response prompt(char prompt_char, string message, string accepted_commands[], vector<string> game_commands) {
     string input, command;
     string *ret = new string[5]{"", "", "", "", ""};
 
@@ -54,17 +66,33 @@ string *prompt(char prompt_char, string message, string *accepted_commands) {
     }
 
     command = ret[0];
-
+    bool is_acceptable;
+    if(game_commands.size() != 0){
+        // Check if command is garbage
+        is_acceptable = contains(game_commands, command);
+        if (!is_acceptable) {
+            print("Invalid command");
+            return {};
+        }
+    }
     // Check if command is accepted
-    bool is_acceptable = contains(accepted_commands, command);
+    is_acceptable = contains(accepted_commands, command);
     if (!is_acceptable) {
         print("You can't do that here");
-        return NULL;
+        return {};
     }
 
     cout << endl << endl;
 
-    return ret;
+    vector<string> args;
+
+    for(int i = 1; i < sizeof(ret) / sizeof(ret[0]); i++){
+        args.push_back(ret[i]);
+    }
+
+    Response response{ret[0], args};
+
+    return response;
 }
 
 void print(string message) { cout << message << endl << endl; }
