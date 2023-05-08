@@ -13,13 +13,13 @@ using namespace std;
  */
 class Node{
     private:
+        bool accessible;
 
     public:
         int id;
         string description;
-        vector<Item> *items;
-        vector<Node> *accesible_nodes;
-        bool accesible;
+        vector<Item> items;
+        vector<Node*> accessible_nodes;
 
         /**
          * @brief Construct a new Node object. Default constructor
@@ -37,15 +37,15 @@ class Node{
          * @param id Node id
          * @param description Node description
          * @param items Items inide the node
-         * @param accesible_nodes Nodes the player can try to move from current node
-         * @param accesible Accesibility of the current node
+         * @param accessible_nodes Nodes the player can try to move from current node
+         * @param accessible Accesibility of the current node
          */
-        Node(int id, string description, vector<Item> *items, vector<Node> *accesible_nodes, bool accesible){
+        Node(int id, string description, vector<Item> items, vector<Node*> accessible_nodes, bool accessible){
             this-> id = id;
             this-> description = description; 
             this-> items = items;
-            this-> accesible_nodes = accesible_nodes;
-            this-> accesible = accesible;
+            this-> accessible_nodes = accessible_nodes;
+            this-> accessible = accessible;
         }
 
         /**
@@ -55,7 +55,22 @@ class Node{
          *                    and the node description will be printed
          */
         Node(string description){
-            this->accesible = false;
+            this->accessible = false;
             this->description = description;
         }
-};   
+
+        Node(int id, string description){
+            this->accessible = false;
+            this->id = id;
+            this->description = description;
+        }
+
+        void addRoute(Node *n){
+            accessible_nodes.push_back(n);
+        }
+
+        void lock();
+        void unlock();
+
+        bool isAccessible();
+};

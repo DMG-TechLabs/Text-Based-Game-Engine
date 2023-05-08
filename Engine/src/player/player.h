@@ -19,22 +19,21 @@ class Player{
         vector<int> stats;
         vector<string> commands;
     public:
-        Node *currentNode = new Node();
-        //Constructors
+        Node *currentNode;
         Player(){}
         ~Player(){}
+        Player(Inventory inventory, string name, vector<string> commands, vector<int> stats){
+            this -> inventory = inventory;
+            this -> name = name;
+            this -> commands = commands;
+            this -> stats = stats;
+        }
         Player(Inventory inventory, string name, vector<string> commands, vector<int> stats, Node *currentNode){
             this -> inventory = inventory;
             this -> name = name;
             this -> commands = commands;
             this -> stats = stats;
             this -> currentNode = currentNode;
-        }
-        Player(Inventory inventory, string name, vector<string> commands, vector<int> stats){
-            this -> inventory = inventory;
-            this -> name = name;
-            this -> commands = commands;
-            this -> stats = stats;
         }
 
         //Setters getters
@@ -53,5 +52,5 @@ class Player{
          * 
          * @param newNode The node the player tries to move to
          */
-        //void moveNode(Node *newNode, Node *oldNode);
+        void moveToNode(Node *newNode);
 };

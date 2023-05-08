@@ -18,8 +18,6 @@
 #include "../utils/game_utils.h"
 #include "../utils/prompt.h"
 
-#define MAX_ROOMS 5
-
 using namespace std;
 
 namespace Engine {
@@ -27,15 +25,15 @@ namespace Engine {
     public:
         string name;
 
-        ~Command() {}
+        virtual ~Command() {}
         Command(){}
         Command(string name) { this->name = name; }
 
-        void run();
-        void run(string command);
-        void run(string command, Item* item);
-        void run(Item *item);
-        void run(string command, Player *player, Node *room);
-        void run(string command, Player *player, Item *item);
+        virtual void run();
+        virtual void run(string command);
+        virtual void run(string command, Item* item);
+        virtual void run(Item *item);
+        virtual void run(string command, Player *player, Node *room);
+        virtual void run(string command, Player *player, Item *item);
     };
 }  // namespace Engine

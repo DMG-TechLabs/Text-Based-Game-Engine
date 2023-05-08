@@ -29,9 +29,6 @@ set(SOURCES
     
     ${MY_LIBRARY_PATH}/${LIB_DIR}/node/node.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/node/node.h
-
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/movement/movement.cpp
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/movement/movement.h
     
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/progress/progress.cpp
@@ -44,8 +41,8 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/main.cpp
 )
 
-#add_executable(TextBasedGameEngine ${SOURCES})
-add_library(TextBasedGameEngine ${SOURCES})
-target_link_libraries(TextBasedGameEngine boost_serialization) 
+add_executable(TextBasedGameEngine ${SOURCES})
+#add_library(TextBasedGameEngine ${SOURCES})
+target_link_libraries(TextBasedGameEngine ${boost_serialization}) 
 
 
