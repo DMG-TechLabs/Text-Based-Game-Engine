@@ -46,5 +46,6 @@ set(SOURCES
 
 #add_executable(TextBasedGameEngine ${SOURCES})
 add_library(TextBasedGameEngine ${SOURCES})
+target_link_libraries(TextBasedGameEngine boost_serialization) 
 
 
