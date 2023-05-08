@@ -49,8 +49,7 @@ void Player::moveToNode(Node *newNode) {
         print(newNode -> description);
     }
     /**
-     * @brief If the player tries to enter an accessible node, it marks the current node as not inside and the new node as inside
-     *        it also changes the currentNode parameter inside the player object to the new one. Finally it prints the new node  
+     * @brief If the player tries to enter an accessible node, it changes the currentNode parameter inside the player object to the new one. Finally it prints the new node  
      */
     else {
         this->currentNode = newNode;
