@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 3.16)
 project(TextBasedGameEngine)
 set(CMAKE_CXX_STANDARD 11)
 
-set(MY_LIBRARY_PATH "./Text-Based-Game-Engine")
+set(MY_LIBRARY_PATH "..")
 
 set(LIB_DIR "Engine/src")
 
-include_directories($(MY_LIBRARY_PATH)/Engine/boost)
-link_directories($(MY_LIBRARY_PATH)/Engine/boost/stage/lib)
+include_directories(${MY_LIBRARY_PATH}/Engine/boost)
+link_directories(${MY_LIBRARY_PATH}/Engine/boost/stage/lib)
 
 message("Library path: ${MY_LIBRARY_PATH}/${LIB_DIR}")
 
