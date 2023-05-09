@@ -78,6 +78,12 @@ class Node{
             this->id = id;
             this->description = description;
         }
+        
+        Node(int id, string description, bool accessible){
+            this->accessible = accessible;
+            this->id = id;
+            this->description = description;
+        }
 
         void setId(int id);
         void setDescription(string description);
