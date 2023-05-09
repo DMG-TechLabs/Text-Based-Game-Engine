@@ -55,4 +55,5 @@ class Player{
          */
         void moveToNode(Node *newNode);
         void addCommand(string command);
+        void collectItem(Item item);
 };
