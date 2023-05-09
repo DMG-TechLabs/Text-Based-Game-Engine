@@ -1,10 +1,11 @@
 #pragma once
 
-#include "inventory.h"
-#include "../node/node.h"
 #include <iostream>
 #include <string>
 #include <vector>
+
+#include "inventory.h"
+#include "../node/node.h"
 
 using namespace std;
 
@@ -53,4 +54,5 @@ class Player{
          * @param newNode The node the player tries to move to
          */
         void moveToNode(Node *newNode);
+        void addCommand(string command);
 };

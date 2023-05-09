@@ -57,3 +57,7 @@ void Player::moveToNode(Node *newNode) {
     }
 
 }
+
+void Player::addCommand(string command){
+    this->commands.push_back(command);
+}
