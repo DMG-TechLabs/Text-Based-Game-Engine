@@ -47,6 +47,20 @@ class Node{
             this-> accessible_nodes = accessible_nodes;
             this-> accessible = accessible;
         }
+        
+        /**
+         * @brief Construct a new Node object.
+         * 
+         * @param id Node id
+         * @param description Node description
+         * @param items Items inide the node
+         */
+        Node(int id, string description, vector<Item> items){
+            this-> id = id;
+            this-> description = description; 
+            this-> items = items;
+            this-> accessible = false;
+        }
 
         /**
          * @brief Construct a new Node object. Constructor for inaccesible rooms
