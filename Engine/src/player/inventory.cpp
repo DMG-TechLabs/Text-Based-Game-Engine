@@ -39,7 +39,7 @@ int Inventory::getQuantity(string id) {
 void Inventory::printInventory() {
     vector<Item> passed;
     for (Item i : items) {
-        if (!exists(passed, i)){
+        if (!exists(passed, i)) {
             cout << "Name: " << i.getName() << ", Id: " << i.getItemId()
                  << ", Quantity: " << getQuantity(i) << endl;
         }
@@ -54,12 +54,15 @@ string Inventory::exportContents() {
 }
 
 void Inventory::importContents() {}
+void Inventory::addItem(Item item) { items.push_back(item); }
+
+
+
 
 // Utils
-
 bool exists(vector<Item> vector, Item item) {
     for (size_t i = 0; i < vector.size(); i++) {
-        if(vector.at(i).getItemId() == item.getItemId()) return true;
+        if (vector.at(i).getItemId() == item.getItemId()) return true;
     }
 
     return false;

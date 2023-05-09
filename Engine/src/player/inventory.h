@@ -10,12 +10,9 @@ using namespace std;
  */
 class Inventory {
     private:
-        // Item* inventory[32];
-        // vector<Item> items;
-        
-    public:
         vector<Item> items;
-        //Constructors 
+
+    public:
         Inventory(){};
         ~Inventory(){};
         Inventory(vector<Item> items){
@@ -24,9 +21,7 @@ class Inventory {
         
         //Getters
         vector<Item> getItems();
-        void addItem(Item item){
-            items.push_back(item);
-        }
+        void addItem(Item item);
 
         //Auxilary methods
         Item getItem(string id);

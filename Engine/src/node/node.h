@@ -13,7 +13,7 @@ using namespace std;
  */
 class Node{
     private:
-        bool accessible;
+        bool accessible = false;
 
     public:
         int id;
@@ -65,12 +65,11 @@ class Node{
             this->description = description;
         }
 
-        void addRoute(Node *n){
-            accessible_nodes.push_back(n);
-        }
-
+        void setId(int id);
+        void setDescription(string description);
+        void addItem(Item item);
+        void addRoute(Node *n);
         void lock();
         void unlock();
-
         bool isAccessible();
 };
