@@ -41,8 +41,8 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/main.cpp
 )
 
-add_executable(TextBasedGameEngine ${SOURCES})
-#add_library(TextBasedGameEngine ${SOURCES})
+#add_executable(TextBasedGameEngine ${SOURCES})
+add_library(TextBasedGameEngine ${SOURCES})
 target_link_libraries(TextBasedGameEngine ${boost_serialization}) 
 
 
