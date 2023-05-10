@@ -12,9 +12,15 @@ struct Response{
     vector<string> args;
 };
 
+struct Prompt{
+    char prompt_char;
+    string message;
+    vector<string> accepted_commands;
+};
 
-Response prompt(char prompt_char, string accepted_commands[], vector<string> game_commands = {});
-Response prompt(char prompt_char, string message, string accepted_commands[], vector<string> game_commands = {});
+Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands = {});
+Response prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands = {});
+Response prompt(Prompt p, vector<string> game_commands = {});
 
 void print(string message);
 void print(int message);

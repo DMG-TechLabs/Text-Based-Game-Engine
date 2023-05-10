@@ -44,16 +44,20 @@ int itemsLength(Item **items) {
 
 /* ============={End of Utils}============= */
 
-Response prompt(char prompt_char, string accepted_commands[], vector<string> game_commands) {
+Response prompt(Prompt p, vector<string> game_commands){
+    return prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
+}
+
+Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
     return prompt(prompt_char, "", accepted_commands, game_commands);
 }
 
-Response prompt(char prompt_char, string message, string accepted_commands[], vector<string> game_commands) {
+Response prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands) {
     string input, command;
     string *ret = new string[5]{"", "", "", "", ""};
 
-    if (message != "") print(message);
-    cout << prompt_char << " ";
+    if (message != "") println(message);
+    cout << '\n' << prompt_char << " ";
 
     getline(cin, input);
 
