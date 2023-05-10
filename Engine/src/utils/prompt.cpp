@@ -95,7 +95,11 @@ Response prompt(char prompt_char, string message, string accepted_commands[], ve
     return response;
 }
 
-void print(string message) { cout << message << endl << endl; }
-void print(int message) { cout << message << endl << endl; }
-void print(char message) { cout << message << endl; }
+void print(string message) { cout << message; }
+void print(int message) { cout << message; }
+void print(char message) { cout << message;}
+
+void println(string message) { cout << message << endl; }
+void println(int message) { cout << message << endl; }
+void println(char message) { cout << message << endl; }
 

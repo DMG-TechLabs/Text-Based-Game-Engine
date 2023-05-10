@@ -19,3 +19,7 @@ Response prompt(char prompt_char, string message, string accepted_commands[], ve
 void print(string message);
 void print(int message);
 void print(char message);
+
+void println(string message);
+void println(int message);
+void println(char message);
