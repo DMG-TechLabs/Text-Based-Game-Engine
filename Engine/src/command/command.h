@@ -31,9 +31,9 @@ namespace Engine {
 
         virtual void run();
         virtual void run(string command);
-        virtual void run(string command, Item* item);
-        virtual void run(Item *item);
-        virtual void run(string command, Player *player, Node *room);
-        virtual void run(string command, Player *player, Item *item);
+        virtual void run(string command, Item item);
+        virtual void run(Item item);
+        virtual void run(string command, Player player, Node *room);
+        virtual void run(string command, Player player, Item item);
     };
 }  // namespace Engine
