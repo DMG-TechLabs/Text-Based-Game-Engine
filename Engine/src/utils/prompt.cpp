@@ -75,14 +75,14 @@ Response prompt(char prompt_char, string message, vector<string> accepted_comman
         // Check if command is garbage
         is_acceptable = contains(game_commands, command);
         if (!is_acceptable) {
-            print("Invalid command");
+            println("Invalid command");
             return {};
         }
     }
     // Check if command is accepted
     is_acceptable = contains(accepted_commands, command);
     if (!is_acceptable) {
-        print("You can't do that here");
+        println("You can't do that here");
         return {};
     }
 
