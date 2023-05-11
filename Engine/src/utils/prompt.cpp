@@ -44,16 +44,20 @@ int itemsLength(Item **items) {
 
 /* ============={End of Utils}============= */
 
-Response prompt(char prompt_char, string accepted_commands[], vector<string> game_commands) {
+Response prompt(Prompt p, vector<string> game_commands){
+    return prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
+}
+
+Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
     return prompt(prompt_char, "", accepted_commands, game_commands);
 }
 
-Response prompt(char prompt_char, string message, string accepted_commands[], vector<string> game_commands) {
+Response prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands) {
     string input, command;
     string *ret = new string[5]{"", "", "", "", ""};
 
-    if (message != "") print(message);
-    cout << prompt_char << " ";
+    if (message != "") println(message);
+    cout << '\n' << prompt_char << " ";
 
     getline(cin, input);
 
@@ -71,14 +75,14 @@ Response prompt(char prompt_char, string message, string accepted_commands[], ve
         // Check if command is garbage
         is_acceptable = contains(game_commands, command);
         if (!is_acceptable) {
-            print("Invalid command");
+            println("Invalid command");
             return {};
         }
     }
     // Check if command is accepted
     is_acceptable = contains(accepted_commands, command);
     if (!is_acceptable) {
-        print("You can't do that here");
+        println("You can't do that here");
         return {};
     }
 
@@ -95,7 +99,11 @@ Response prompt(char prompt_char, string message, string accepted_commands[], ve
     return response;
 }
 
-void print(string message) { cout << message << endl << endl; }
-void print(int message) { cout << message << endl << endl; }
-void print(char message) { cout << message << endl; }
+void print(string message) { cout << message; }
+void print(int message) { cout << message; }
+void print(char message) { cout << message;}
+
+void println(string message) { cout << message << endl; }
+void println(int message) { cout << message << endl; }
+void println(char message) { cout << message << endl; }
 
