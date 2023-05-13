@@ -89,13 +89,12 @@ Response prompt(char prompt_char, string message, vector<string> accepted_comman
     cout << endl << endl;
 
     vector<string> args;
-
-    for(int i = 1; i < sizeof(ret) / sizeof(ret[0]); i++){
-        args.push_back(ret[i]);
+    for(int i = 1; i < 5; i++){
+        if(ret[i] != "")
+            args.push_back(ret[i]);
     }
 
     Response response{ret[0], args};
-
     return response;
 }
 

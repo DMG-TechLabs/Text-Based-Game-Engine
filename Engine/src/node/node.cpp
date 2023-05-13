@@ -14,4 +14,4 @@ void Node::setDescription(string description) {
 
 void Node::addRoute(Node *n) { accessible_nodes.push_back(n); }
 
-void Node::addItem(Item item) { this->items.push_back(item); }
+void Node::addItem(Item *item) { this->items.push_back(item); }

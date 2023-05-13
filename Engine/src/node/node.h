@@ -18,7 +18,7 @@ class Node{
     public:
         int id;
         string description;
-        vector<Item> items;
+        vector<Item*> items;
         vector<Node*> accessible_nodes;
 
         /**
@@ -40,7 +40,7 @@ class Node{
          * @param accessible_nodes Nodes the player can try to move from current node
          * @param accessible Accesibility of the current node
          */
-        Node(int id, string description, vector<Item> items, vector<Node*> accessible_nodes, bool accessible){
+        Node(int id, string description, vector<Item*> items, vector<Node*> accessible_nodes, bool accessible){
             this-> id = id;
             this-> description = description; 
             this-> items = items;
@@ -55,7 +55,7 @@ class Node{
          * @param description Node description
          * @param items Items inide the node
          */
-        Node(int id, string description, vector<Item> items){
+        Node(int id, string description, vector<Item*> items){
             this-> id = id;
             this-> description = description; 
             this-> items = items;
@@ -87,7 +87,7 @@ class Node{
 
         void setId(int id);
         void setDescription(string description);
-        void addItem(Item item);
+        void addItem(Item *item);
         void addRoute(Node *n);
         void lock();
         void unlock();

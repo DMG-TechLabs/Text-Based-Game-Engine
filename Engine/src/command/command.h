@@ -23,17 +23,12 @@ using namespace std;
 namespace Engine {
     class Command{
     public:
-        string name;
-
-        virtual ~Command() {}
-        Command(){}
-        Command(string name) { this->name = name; }
-
-        virtual void run();
-        virtual void run(string command);
-        virtual void run(string command, Item item);
-        virtual void run(Item item);
-        virtual void run(string command, Player player, Node *room);
-        virtual void run(string command, Player player, Item item);
+        static void run();
+        static void run(string command);
+        static void run(string command, Item item);
+        static void run(Item item);
+        static void run(string command, Player *player, Node *room);
+        static void run(string command, Player *player, Item item);
+        static void run(Response response, Player *player);
     };
 }  // namespace Engine
