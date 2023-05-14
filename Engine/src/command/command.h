@@ -29,6 +29,6 @@ namespace Engine {
         static void run(Item item);
         static void run(string command, Player *player, Node *room);
         static void run(string command, Player *player, Item item);
-        static void run(Response response, Player *player);
+        static void run(Response response, Prompt p, Player *player);
     };
 }  // namespace Engine
