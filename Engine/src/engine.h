@@ -9,3 +9,4 @@
 #include "progress/progress.h"
 #include "utils/game_utils.h"
 #include "utils/prompt.h"
+#include "text/text.h"
