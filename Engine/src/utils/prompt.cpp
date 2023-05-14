@@ -5,6 +5,7 @@
 
 #include "../command/command.h"
 #include "../item/item.h"
+#include "../text/text.h"
 
 /* ============={Utils}============= */
 
@@ -57,7 +58,7 @@ Response prompt(char prompt_char, string message, vector<string> accepted_comman
     string *ret = new string[5]{"", "", "", "", ""};
 
     if (message != "") println(message);
-    cout << '\n' << prompt_char << " ";
+    cout << '\n' << Text::red <<  prompt_char << Text::normal <<  " ";
 
     getline(cin, input);
 
