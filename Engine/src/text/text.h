@@ -10,6 +10,7 @@ class Text{
         static const string normal;
         static const string bold;
         static const string underline;
+        static const string italic;
 
         static const string clear;
         static const string erase_line;
@@ -45,5 +46,6 @@ class Text{
         static const string b_dgrey;
 
         static string color(string where, int color);
+        static void delayedTyping(string text);
 };
 

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <unistd.h>
 
 #include "../command/command.h"
 #include "../item/item.h"
@@ -57,7 +58,7 @@ Response prompt(char prompt_char, string message, vector<string> accepted_comman
     string input, command;
     string *ret = new string[5]{"", "", "", "", ""};
 
-    if (message != "") println(message);
+    if (message != "") println(message, 1);
     cout << '\n' << Text::red <<  prompt_char << Text::normal <<  " ";
 
     getline(cin, input);
@@ -103,7 +104,10 @@ void print(string message) { cout << message; }
 void print(int message) { cout << message; }
 void print(char message) { cout << message;}
 
-void println(string message) { cout << message << endl; }
+void println(string message, int delay) {
+    cout << message << endl; 
+    sleep(delay);
+}
 void println(int message) { cout << message << endl; }
 void println(char message) { cout << message << endl; }
 

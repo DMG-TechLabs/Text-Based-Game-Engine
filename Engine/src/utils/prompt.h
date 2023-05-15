@@ -26,6 +26,6 @@ void print(string message);
 void print(int message);
 void print(char message);
 
-void println(string message);
+void println(string message, int delay = 2);
 void println(int message);
 void println(char message);

@@ -1,8 +1,14 @@
 #include "text.h"
 
+#include <chrono>
+#include <thread>
+
+#include "../utils/prompt.h"
+
 const string Text::normal = "\e[0;39m";
 const string Text::bold = "\e[1m";
 const string Text::underline = "\033[4m";
+const string Text::italic = "\e[3m";
 
 const string Text::clear = "\e[2J";
 const string Text::erase_line = "\e[2K";
@@ -39,7 +45,17 @@ const string Text::b_dgrey = "\e[1;38m";
 
 string Text::color(string where, int color) {
     if (where != "bg" && where != "fg") return "";
-    if(color < 0 || color > 255) return "";
-    
-    return (where == "bg") ? "\e[48;5;" + to_string(color) + "m" : "\e[38;5;" + to_string(color) + "m";
+    if (color < 0 || color > 255) return "";
+
+    return (where == "bg") ? "\e[48;5;" + to_string(color) + "m"
+                           : "\e[38;5;" + to_string(color) + "m";
+}
+
+void Text::delayedTyping(string text) {
+    int min_speed = 100;
+    for (const auto c : text) {
+        std::cout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(min_speed + rand() % min_speed));
+    }
+    std::cout << std::endl;
 }
