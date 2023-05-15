@@ -42,7 +42,7 @@ void Inventory::printInventory() {
         if (!exists(passed, i)) {
             cout << "Name: " << i.getName() << ", Id: " << i.getItemId()
                  << ", Quantity: " << getQuantity(i) 
-                 << "Description: " << i.getDescription() << endl;
+                 << ", Description: " << i.getDescription() << endl;
         }
         passed.push_back(i);
     }
