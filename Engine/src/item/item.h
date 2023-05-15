@@ -17,6 +17,10 @@ class Item {
         virtual ~Item(){}
         Item(){}
 
+        Item(string name){
+            this -> name = name;
+        }
+
         Item(string name, string description){
             this -> name = name;
             this -> description = description;
