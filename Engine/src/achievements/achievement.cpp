@@ -1,5 +1,6 @@
 #include "achievement.h"
 
+using namespace Engine;
 
 //Setters getters
 void Achievement::setName( string name ){ 

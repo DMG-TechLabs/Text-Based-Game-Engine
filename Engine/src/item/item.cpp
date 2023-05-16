@@ -1,5 +1,7 @@
 #include "item.h"
 
+using namespace Engine;
+
 //Setters getters
 void Item::setName(string name){
     this -> name = name;

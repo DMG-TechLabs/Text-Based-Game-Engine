@@ -4,6 +4,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 
 /**
  * @brief Achievement class
@@ -38,3 +40,4 @@ class Achievement{
 
 };
 
+}

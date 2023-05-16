@@ -12,6 +12,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 class Save{
     private:
         unordered_map<std::string, std::string> createHashTable();
@@ -36,3 +38,4 @@ class Save{
         }
         string getCurrentDate();
 };
+}

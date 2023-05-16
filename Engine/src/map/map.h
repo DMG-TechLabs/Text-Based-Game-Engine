@@ -2,6 +2,9 @@
 
 #include "../node/node.h"
 
+namespace Engine{
+
+
 class Map{
     public:
         vector<Node*> nodes;
@@ -23,3 +26,4 @@ class Map{
         Node *getNode(int id);
         void addNode(Node *node, vector<int> connectedTo = {});
 };   
+}

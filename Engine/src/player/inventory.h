@@ -4,6 +4,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 /**
  * @brief Inventory class
  * 
@@ -34,3 +36,4 @@ class Inventory {
 
         void printInventory();
 };
+}

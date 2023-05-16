@@ -9,6 +9,9 @@
 
 using namespace std;
 
+namespace Engine{
+
+
 /**
  * @brief Class of the player
  * 
@@ -57,3 +60,4 @@ class Player{
         void addCommand(string command);
         void collectItem(Item item);
 };
+}

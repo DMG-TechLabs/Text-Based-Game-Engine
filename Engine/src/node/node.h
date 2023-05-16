@@ -8,6 +8,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 /**
  * @brief Node class. Each node represents a place where the player can move to
  */
@@ -93,3 +95,4 @@ class Node{
         void unlock();
         bool isAccessible();
 };
+}

@@ -1,6 +1,8 @@
 #include "player.h"
 #include "inventory.h"
 
+using namespace Engine;
+
 //Setters getters
 void Player::setInventory(Inventory inventory){
     this -> inventory = inventory;

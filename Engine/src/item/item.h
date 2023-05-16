@@ -5,6 +5,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 class Item {
     private:
         string name;
@@ -53,3 +55,5 @@ class Item {
         string* getCommands(); 
 };
 
+
+}
