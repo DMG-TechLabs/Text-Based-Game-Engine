@@ -8,6 +8,8 @@
 #include "../item/item.h"
 #include "../text/text.h"
 
+using namespace Engine;
+
 /* ============={Utils}============= */
 
 bool contains(string *arr, string str) {
@@ -47,23 +49,23 @@ int itemsLength(Item **items) {
 /* ============={End of Utils}============= */
 
 
-Response prompt(Prompt p, vector<string> game_commands, bool displayPrompt){
+Response Engine::prompt(Prompt p, vector<string> game_commands, bool displayPrompt){
     if(displayPrompt)
-        return prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
+        return Engine::prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
     else
-        return prompt(p.prompt_char, "", p.accepted_commands, game_commands);
+        return Engine::prompt(p.prompt_char, "", p.accepted_commands, game_commands);
 
 }
 
-Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
-    return prompt(prompt_char, "", accepted_commands, game_commands);
+Response Engine::prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
+    return Engine::prompt(prompt_char, "", accepted_commands, game_commands);
 }
 
-Response prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands) {
+Response Engine::prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands) {
     string input, command;
     string *ret = new string[5]{"", "", "", "", ""};
 
-    if (message != "") println(message, 1);
+    if (message != "") Engine::println(message, 1);
     cout << '\n' << Text::red <<  prompt_char << Text::normal <<  " ";
 
     getline(cin, input);
@@ -105,14 +107,14 @@ Response prompt(char prompt_char, string message, vector<string> accepted_comman
     return response;
 }
 
-void print(string message) { cout << message; }
-void print(int message) { cout << message; }
-void print(char message) { cout << message;}
+void Engine::print(string message) { cout << message; }
+void Engine::print(int message) { cout << message; }
+void Engine::print(char message) { cout << message;}
 
-void println(string message, int delay) {
+void Engine::println(string message, int delay) {
     cout << message << endl; 
     sleep(delay);
 }
-void println(int message) { cout << message << endl; }
-void println(char message) { cout << message << endl; }
+void Engine::println(int message) { cout << message << endl; }
+void Engine::println(char message) { cout << message << endl; }
 

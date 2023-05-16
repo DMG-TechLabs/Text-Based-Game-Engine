@@ -1,5 +1,7 @@
 #include "map.h"
 
+using namespace Engine;
+
 bool exists(vector<int> vector, int s);
 
 void Map::addNode(Node *node, vector<int> connectedTo) {

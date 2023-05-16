@@ -5,6 +5,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 class Text{
     public:
         static const string normal;
@@ -49,3 +51,5 @@ class Text{
         static void delayedTyping(string text);
 };
 
+
+}

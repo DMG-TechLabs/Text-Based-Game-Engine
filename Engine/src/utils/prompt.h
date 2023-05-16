@@ -7,6 +7,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 struct Response{
     string command;
     vector<string> args;
@@ -17,6 +19,7 @@ struct Prompt{
     string message;
     vector<string> accepted_commands;
 };
+
 
 Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands = {});
 Response prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands = {});
@@ -29,3 +32,5 @@ void print(char message);
 void println(string message, int delay = 2);
 void println(int message);
 void println(char message);
+
+}

@@ -1,5 +1,7 @@
 #include "node.h"
 
+using namespace Engine;
+
 void Node::lock() { this->accessible = false; }
 
 void Node::unlock() { this->accessible = true; }
