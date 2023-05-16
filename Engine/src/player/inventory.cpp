@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+using namespace Engine;
+
 using namespace std;
 
 bool exists(vector<Item> vector, Item item);

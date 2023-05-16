@@ -5,6 +5,9 @@
 
 #include "../utils/prompt.h"
 
+using namespace Engine;
+
+
 const string Text::normal = "\e[0;39m";
 const string Text::bold = "\e[1m";
 const string Text::underline = "\033[4m";
