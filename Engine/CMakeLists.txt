@@ -41,6 +41,9 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.cpp
 
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.h
+
     ${MY_LIBRARY_PATH}/${LIB_DIR}/main.cpp
 )
 

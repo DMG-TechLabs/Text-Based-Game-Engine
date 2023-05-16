@@ -46,8 +46,13 @@ int itemsLength(Item **items) {
 
 /* ============={End of Utils}============= */
 
-Response prompt(Prompt p, vector<string> game_commands){
-    return prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
+
+Response prompt(Prompt p, vector<string> game_commands, bool displayPrompt){
+    if(displayPrompt)
+        return prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
+    else
+        return prompt(p.prompt_char, "", p.accepted_commands, game_commands);
+
 }
 
 Response prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
