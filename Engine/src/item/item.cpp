@@ -26,11 +26,3 @@ void Item::setDescription(string description){
 string Item::getDescription(){
     return description;
 }
-
-void Item::setCommands(string *commands){
-    this->commands = commands;
-}
-
-string* Item::getCommands(){
-    return this->commands;
-}

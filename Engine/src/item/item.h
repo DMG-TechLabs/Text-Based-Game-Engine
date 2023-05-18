@@ -50,9 +50,6 @@ class Item {
 
         void setDescription(string description);
         string getDescription();   
-
-        void setCommands(string *commands);
-        string* getCommands(); 
 };
 
 
