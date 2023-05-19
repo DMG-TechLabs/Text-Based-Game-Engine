@@ -12,7 +12,6 @@ class Item {
         string name;
         string item_id;    
         string description;
-        string *commands = new string[10];
         
     public:
         //Constructors
@@ -34,12 +33,6 @@ class Item {
             this -> description = description;
         }
 
-        Item(string item_id, string name, string description, string *commands){
-            this ->item_id = item_id;
-            this -> name = name;
-            this -> description = description;
-            this -> commands = commands;
-        }
 
         //Setters getters
         void setName(string name);

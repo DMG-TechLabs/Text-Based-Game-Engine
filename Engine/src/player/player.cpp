@@ -68,10 +68,7 @@ void Player::moveToNode(Node *newNode) {
 
 }
 
-void Player::addCommand(string command){
-    this->commands.push_back(command);
-}
 
-void Player::collectItem(Item item){
+void Player::collectItem(Item *item){
     this->inventory.addItem(item);
 }

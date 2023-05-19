@@ -3,14 +3,14 @@
 
 using namespace Engine;
 
-void saveToFile(string file_name, string text_data){
+void Engine::saveToFile(string file_name, string text_data){
     ofstream file;
     file.open (file_name);
     file << text_data;
     file.close();
 }
 
-string loadFromFile(string file_name){
+string Engine::loadFromFile(string file_name){
     string text_data;
     ifstream file;
     file.open (file_name);
@@ -21,7 +21,7 @@ string loadFromFile(string file_name){
 }
 
 template <typename T> 
-void saveObject(string filename, T object_to_save)
+void Engine::saveObject(string filename, T object_to_save)
 {
     ofstream outfile;
     outfile.open(filename, ios::binary | ios::out);
@@ -30,7 +30,7 @@ void saveObject(string filename, T object_to_save)
 }
 
 template <typename T> 
-T loadObject(string filename, T object_to_load)
+T Engine::loadObject(string filename, T object_to_load)
 {
     ifstream infile;
     infile.open("silly.dat", ios::binary | ios::in);

@@ -12,22 +12,22 @@ namespace Engine{
  */
 class Inventory {
     private:
-        vector<Item> items;
+        vector<Item *> items;
 
     public:
         Inventory(){};
         ~Inventory(){};
-        Inventory(vector<Item> items){
+        Inventory(vector<Item *> items){
             this->items = items;
         };
         
         //Getters
-        vector<Item> getItems();
-        void addItem(Item item);
+        vector<Item *> getItems();
+        void addItem(Item *item);
 
         //Auxilary methods
         Item getItem(string id);
-        int getQuantity(Item item);
+        int getQuantity(Item *item);
         int getQuantity(string id);
         
         //For progress
