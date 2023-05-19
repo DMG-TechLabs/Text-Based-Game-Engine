@@ -3,10 +3,11 @@
 #include <iostream>
 
 using namespace Engine;
-
 using namespace std;
 
-bool exists(vector<Item> vector, Item item);
+namespace InventoryUtils{
+    bool exists(vector<Item> vector, Item item);
+}
 
 // Getters
 vector<Item *> Inventory::getItems() { return items; }
@@ -51,7 +52,7 @@ void Inventory::addItem(Item *item) { items.push_back(item); }
 
 
 // Utils
-bool exists(vector<Item> vector, Item item) {
+bool InventoryUtils::exists(vector<Item> vector, Item item) {
     for (size_t i = 0; i < vector.size(); i++) {
         if (vector.at(i).getItemId() == item.getItemId()) return true;
     }

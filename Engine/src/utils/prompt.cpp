@@ -11,6 +11,7 @@
 using namespace Engine;
 
 /* ============={Utils}============= */
+namespace PromptUtils{
 
 bool contains(string *arr, string str) {
     int size = 0;
@@ -44,6 +45,7 @@ int itemsLength(Item **items) {
     while (items[length_counter]) length_counter++;
 
     return length_counter;
+}
 }
 
 /* ============={End of Utils}============= */
@@ -82,14 +84,14 @@ Response Engine::prompt(char prompt_char, string message, vector<string> accepte
     bool is_acceptable;
     if(game_commands.size() != 0){
         // Check if command is garbage
-        is_acceptable = contains(game_commands, command);
+        is_acceptable = PromptUtils::contains(game_commands, command);
         if (!is_acceptable) {
             println("Invalid command");
             return {};
         }
     }
     // Check if command is accepted
-    is_acceptable = contains(accepted_commands, command);
+    is_acceptable = PromptUtils::contains(accepted_commands, command);
     if (!is_acceptable) {
         println("You can't do that here");
         return {};
