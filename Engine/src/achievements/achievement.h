@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "../boost_serialization_includes.h"
+
 
 using namespace std;
 
@@ -14,6 +16,8 @@ class Achievement{
         bool unlocked = false;
         string name;
         string description;
+        //Necessary to have access the serialization library
+        friend class boost::serialization::access;
 
     public:
         ~Achievement(){};
@@ -22,6 +26,14 @@ class Achievement{
             this->name = name;
             this->description = description;
         };
+
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & unlocked;
+            ar & description;
+            ar & name;
+        }
 
         //Setters getters
         void setName(string name);
