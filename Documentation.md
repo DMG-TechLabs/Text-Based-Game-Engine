@@ -336,6 +336,13 @@ The `Text` class provides static members and methods for text formatting and man
 ### Static Methods
 
 - `static string color(string where, int color)`: Applies the specified color to the given text.
+
+where: "fg" or "bg"
+
+color: 0-255
+
+![47952855-ecb12480-df75-11e8-89d4-ac26c50e80b9](https://github.com/DMG-TechLabs/Text-Based-Game/assets/63654361/4885e933-066b-458a-924b-db07df25f975)
+
 - `static void delayedTyping(string text)`: Prints the text with a delayed typing effect.
 - `static void clearScreen()`: Clears the screen.
 
