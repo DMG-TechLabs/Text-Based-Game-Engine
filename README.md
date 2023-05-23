@@ -2,23 +2,7 @@
 
 ## Documentation
 
-[Check it here]()
-
-
-## Usage
-
-### Prompt - Response
-
-```cpp
-Prompt p;
-p.prompt_char = '>'
-p.accepted_commands = {"help", "read", "collect"};
-p.message = "Message to prompt the player";
-```
-
-```cpp
-Response r = prompt(p);
-```
+[Check it here](https://github.com/DMG-TechLabs/Text-Based-Game-Engine/blob/main/Documentation.md)
 
 ## Tree
 
