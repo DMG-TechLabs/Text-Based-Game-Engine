@@ -51,16 +51,13 @@ int itemsLength(Item **items) {
 /* ============={End of Utils}============= */
 
 
+
 Response Engine::prompt(Prompt p, vector<string> game_commands, bool displayPrompt){
     if(displayPrompt)
         return Engine::prompt(p.prompt_char, p.message, p.accepted_commands, game_commands);
     else
         return Engine::prompt(p.prompt_char, "", p.accepted_commands, game_commands);
 
-}
-
-Response Engine::prompt(char prompt_char, vector<string> accepted_commands, vector<string> game_commands) {
-    return Engine::prompt(prompt_char, "", accepted_commands, game_commands);
 }
 
 Response Engine::prompt(char prompt_char, string message, vector<string> accepted_commands, vector<string> game_commands) {
@@ -110,13 +107,9 @@ Response Engine::prompt(char prompt_char, string message, vector<string> accepte
 }
 
 void Engine::print(string message) { cout << message; }
-void Engine::print(int message) { cout << message; }
-void Engine::print(char message) { cout << message;}
 
 void Engine::println(string message, int delay) {
     cout << message << endl; 
     sleep(delay);
 }
-void Engine::println(int message) { cout << message << endl; }
-void Engine::println(char message) { cout << message << endl; }
 
