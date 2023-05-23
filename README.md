@@ -41,3 +41,14 @@
     └── prompt.h
 
 ```
+
+## Authors
+
+* Konstantinos Despoindis ([KDesp73](https://github.com/KDesp73))
+* Konstantinos Mokas ([creatorkostas](https://github.com/creatorkostas))
+* Athanasios Georgalis ([ThanasisGeorg](https://github.com/ThanasisGeorg))
+* Konstantinos Giantselidis ([congiants](https://github.com/congiants))
+
+## License
+
+[MIT](https://github.com/DMG-TechLabs/Text-Based-Game-Engine/blob/main/LICENSE)
