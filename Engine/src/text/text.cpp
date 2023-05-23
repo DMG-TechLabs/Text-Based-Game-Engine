@@ -2,6 +2,7 @@
 
 #include <chrono>
 #include <thread>
+#include <stdlib.h>
 
 #include "../utils/prompt.h"
 
@@ -61,4 +62,12 @@ void Text::delayedTyping(string text) {
         std::this_thread::sleep_for(std::chrono::milliseconds(min_speed + rand() % min_speed));
     }
     std::cout << std::endl;
+}
+
+void Text::clearScreen() {
+#ifdef _WIN32
+    system("cls"); // Clear screen for Windows
+#else
+    system("clear"); // Clear screen for Linux and macOS
+#endif
 }
