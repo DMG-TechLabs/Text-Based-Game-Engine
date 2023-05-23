@@ -43,6 +43,11 @@ set(SOURCES
 
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.h
+    
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu_utils.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu_utils.cpp
 
     ${MY_LIBRARY_PATH}/${LIB_DIR}/main.cpp
 )
