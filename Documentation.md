@@ -1,6 +1,6 @@
 # Documentation
 
-> All of the below are under the `Engine` namespace
+> All of the below classes, methods and structs are under the `Engine` namespace
 
 ## Achievement Class
 
