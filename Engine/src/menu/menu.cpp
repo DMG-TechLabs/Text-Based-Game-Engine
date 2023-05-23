@@ -10,7 +10,7 @@ void Engine::menu(int bgColor, vector<string> options, void (*handleOptionsFunc)
     int numOfOptions = options.size();
 
     int max = 15;
-    int selectedItem = 1;
+    int selectedItem = 0;
     bool menuActive = true;
 
     // Add the necessary spaces
@@ -23,17 +23,17 @@ void Engine::menu(int bgColor, vector<string> options, void (*handleOptionsFunc)
 
         // Print the options
         for (int i = 0; i < numOfOptions; i++){
-            printOption(selectedItem, i+1, bgColor, options.at(i));
+            printOption(selectedItem, i, bgColor, options.at(i));
         }
         
         // Handle user input
         int keyPressed = handleKeys();
         switch (keyPressed) {
             case 1: // Up arrow key
-                selectedItem = (selectedItem == 1) ? numOfOptions : selectedItem - 1;
+                selectedItem = (selectedItem == 0) ? numOfOptions-1 : selectedItem - 1;
                 break;
             case 2: // Down arrow key
-                selectedItem = (selectedItem == numOfOptions) ? 1 : selectedItem + 1;
+                selectedItem = (selectedItem == numOfOptions-1) ? 0 : selectedItem + 1;
                 break;
             case 0: // Enter
                 menuActive = false;
