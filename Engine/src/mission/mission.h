@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../engine.h"
-#include "objective.h"
+#include "./objective.h"
+#include <vector>
 
 /**
  * @brief Mission class
@@ -11,10 +11,10 @@ class Mission{
     private:
         string name;
         string description;
-        vector<Objective *> objectives;
         bool completed = false;
 
     public:
+        vector<Objective *> objectives;
         static const bool COMPLETED = true;
 
         Mission(){}

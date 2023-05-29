@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "inventory.h"
+#include "../mission/mission.h"
 #include "../node/node.h"
 #include "../boost_serialization_includes.h"
 
@@ -15,17 +16,17 @@ namespace Engine{
 
 /**
  * @brief Class of the player
- * 
+ *
  */
 class Player{
     private:
         //Necessary to have access the serialization library
         friend class boost::serialization::access;
-        
+
         Inventory inventory;
         string name;
         vector<int> stats;
-        vector<Objective *> objectives;
+        Mission *mission;
     public:
         Node *currentNode;
         Player(){}
@@ -58,9 +59,9 @@ class Player{
 
         void setName(string name);
         string getName();
-        
-        void setObjectives(vector<Objective *> objectives);
-        vector<Objective *> getObjectives();
+
+        void setMission(Mission* mission);
+        Mission* getMission();
 
         vector<int> getStats();
 
@@ -68,7 +69,7 @@ class Player{
 
         /**
          * @brief Method that moves player to a new node if it is accessible
-         * 
+         *
          * @param newNode The node the player tries to move to
          */
         void moveToNode(Node *newNode);

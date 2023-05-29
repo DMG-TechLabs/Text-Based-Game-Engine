@@ -1,6 +1,4 @@
 #include "player.h"
-#include "inventory.h"
-#include "../mission/objective.h"
 
 using namespace Engine;
 
@@ -39,12 +37,12 @@ void Player::setCurrentNode(Node *newNode){
     this->currentNode = newNode;
 }
 
-void Player::setObjectives(vector<Objective *> objectives){
-    this->objectives = objectives;
+void Player::setMission(Mission* mission){
+    this->mission = mission;
 }
 
-vector<Objective *> Player::getObjectives(){
-    return this->objectives;
+Mission* Player::getMission(){
+    return this->mission;
 }
 
 
