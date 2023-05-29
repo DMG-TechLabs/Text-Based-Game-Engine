@@ -21,8 +21,8 @@ void Mission::setStatus(bool completed){
 }
 
 bool Mission::isCompleted(){
-    for(int i = 0; i < objectives.size(); i++){
-        if(!objectives.at(i)->isCompleted()) return false;
+    for(Objective *obj : objectives) {
+        if(!obj->isCompleted()) return false;
     }
 
     return true;
