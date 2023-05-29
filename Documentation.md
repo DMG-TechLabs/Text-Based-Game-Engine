@@ -180,6 +180,142 @@ menu(1, menuOptions, handleMenuOption);
 
 ---
 
+## Mission Class
+
+The `Mission` class represents a mission with a name, description, and objectives. It also tracks the completion status of the mission.
+
+### Constructors
+
+#### `Mission()`
+
+Creates an empty `Mission` object.
+
+#### `Mission(string name, string description, vector<Objective *> objectives)`
+
+Creates a `Mission` object with the specified `name`, `description`, and `objectives`.
+
+- `name`: A string representing the name of the mission.
+- `description`: A string describing the mission.
+- `objectives`: A vector of pointers to `Objective` objects representing the objectives of the mission.
+
+### Destructor
+
+#### `~Mission()`
+
+Destroys the `Mission` object and releases any allocated resources.
+
+### Member Variables
+
+- `private string name`: A string that stores the name of the mission.
+- `private string description`: A string that stores the description of the mission.
+- `private bool completed`: A boolean variable that indicates whether the mission is completed. By default, it is set to `false`.
+- `public vector<Objective *> objectives`: A vector of pointers to `Objective` objects representing the objectives of the mission.
+- `public static const bool COMPLETED`: A constant boolean value set to `true`, representing the completed status of the mission.
+
+### Member Functions
+
+#### `void setName(string name)`
+
+Sets the name of the mission to the specified `name`.
+
+- `name`: A string representing the name of the mission.
+
+#### `string getName()`
+
+Returns the name of the mission.
+
+#### `void setDescription(string description)`
+
+Sets the description of the mission to the specified `description`.
+
+- `description`: A string describing the mission.
+
+#### `string getDescription()`
+
+Returns the description of the mission.
+
+#### `void setStatus(bool completed)`
+
+Sets the completion status of the mission.
+
+- `completed`: A boolean value indicating the completion status. Set it to `true` if the mission is completed, and `false` otherwise.
+
+#### `bool isCompleted()`
+
+Checks whether the mission is completed.
+
+- Returns: A boolean value indicating whether the mission is completed (`true`) or not (`false`).
+
+---
+
+## Objective Class
+
+The `Objective` class represents an objective with a description and completion status.
+
+### Constructors
+
+#### `Objective()`
+
+Creates an empty `Objective` object.
+
+#### `Objective(string description)`
+
+Creates an `Objective` object with the specified `description`.
+
+- `description`: A string describing the objective.
+
+### Destructor
+
+#### `~Objective()`
+
+Destroys the `Objective` object and releases any allocated resources.
+
+### Member Variables
+
+- `private string description`: A string that stores the description of the objective.
+- `private bool completed`: A boolean variable that indicates whether the objective is completed. By default, it is set to `false`.
+
+### Member Functions
+
+#### `void setDescription(string description)`
+
+Sets the description of the objective to the specified `description`.
+
+- `description`: A string describing the objective.
+
+#### `string getDescription()`
+
+Returns the description of the objective.
+
+#### `void setStatus(bool completed)`
+
+Sets the completion status of the objective.
+
+- `completed`: A boolean value indicating the completion status. Set it to `true` if the objective is completed, and `false` otherwise.
+
+#### `bool isCompleted()`
+
+Checks whether the objective is completed.
+
+- Returns: A boolean value indicating whether the objective is completed (`true`) or not (`false`).
+
+#### `static void printObjectives(vector<Objective *> objectives)`
+
+Prints the descriptions of the objectives in the specified `objectives` vector.
+
+- `objectives`: A vector of pointers to `Objective` objects representing the objectives to be printed.
+
+#### `static void completeObjective(bool check, vector<Objective *> objectives, int index)`
+
+Sets the completion status of the objective at the specified `index` in the `objectives` vector based on the `check` value.
+
+- `check`: A boolean value indicating whether the objective is completed (`true`) or not (`false`).
+- `objectives`: A vector of pointers to `Objective` objects representing the objectives.
+- `index`: An integer representing the index of the objective to be completed.
+
+
+---
+
 ## Node Class
 
 The `Node` class represents a room or a place in general. It contains information about the node's ID, description, items, accessible nodes, and accessibility.
@@ -252,44 +388,134 @@ The `Inventory` class represents a collection of items that a player can possess
 
 ## Player Class
 
-The `Player` class represents a player in the game. It contains information about the player's inventory, name, stats, and current node.
+The `Player` class represents a player with an inventory, name, stats, and a current mission.
 
-### Private Members
+### Constructors
 
-- `Inventory inventory`: The player's inventory.
-- `string name`: The name of the player.
-- `vector<int> stats`: The player's stats.
+#### `Player()`
 
-### Public Members
+Creates an empty `Player` object.
 
-- `Node *currentNode`: A pointer to the current node where the player is located.
+#### `Player(Inventory inventory, string name, vector<int> stats)`
 
-#### Constructors
+Creates a `Player` object with the specified `inventory`, `name`, and `stats`.
 
-- `Player()`: Default constructor.
-- `~Player()`: Destructor.
-- `Player(Inventory inventory, string name, vector<int> stats)`: Constructs a player with the specified inventory, name, and stats.
-- `Player(Inventory inventory, string name, vector<int> stats, Node *currentNode)`: Constructs a player with the specified inventory, name, stats, and current node.
+- `inventory`: An `Inventory` object representing the player's inventory.
+- `name`: A string representing the name of the player.
+- `stats`: A vector of integers representing the player's stats.
 
-#### Setters and Getters
+### Destructor
 
-- `void setInventory(Inventory inventory)`: Sets the player's inventory.
-- `Inventory getInventory()`: Retrieves the player's inventory.
-- `void setName(string name)`: Sets the player's name.
-- `string getName()`: Retrieves the player's name.
-- `vector<int> getStats()`: Retrieves the player's stats.
+#### `~Player()`
 
-#### Methods
+Destroys the `Player` object and releases any allocated resources.
 
-- `void setCurrentNode(Node *newNode)`: Sets the player's current node to the specified node.
-- `void moveToNode(Node *newNode)`: Moves the player to a new node if it is accessible.
-- `void collectItem(Item *item)`: Collects an item and adds it to the player's inventory.
+### Member Variables
+
+- `private Inventory inventory`: An `Inventory` object representing the player's inventory.
+- `private string name`: A string that stores the name of the player.
+- `private vector<int> stats`: A vector of integers representing the player's stats.
+- `private Mission *mission`: A pointer to a `Mission` object representing the player's current mission.
+- `public Node *currentNode`: A pointer to a `Node` object representing the player's current location.
+
+### Member Functions
+
+#### `void setInventory(Inventory inventory)`
+
+Sets the player's inventory to the specified `inventory`.
+
+- `inventory`: An `Inventory` object representing the player's inventory.
+
+#### `Inventory getInventory()`
+
+Returns the player's inventory.
+
+#### `void setName(string name)`
+
+Sets the player's name to the specified `name`.
+
+- `name`: A string representing the name of the player.
+
+#### `string getName()`
+
+Returns the player's name.
+
+#### `void setMission(Mission* mission)`
+
+Sets the player's current mission to the specified `mission`.
+
+- `mission`: A pointer to a `Mission` object representing the player's current mission.
+
+#### `Mission* getMission()`
+
+Returns the player's current mission.
+
+#### `vector<int> getStats()`
+
+Returns the player's stats.
+
+#### `void setCurrentNode(Node *newNode)`
+
+Sets the player's current location to the specified `newNode`.
+
+- `newNode`: A pointer to a `Node` object representing the player's new location.
+
+#### `void moveToNode(Node *newNode)`
+
+Moves the player to a new node if it is accessible.
+
+- `newNode`: A pointer to a `Node` object representing the node the player tries to move to.
+
+#### `void collectItem(Item *item)`
+
+Collects the specified `item` and adds it to the player's inventory.
+
+- `item`: A pointer to an `Item` object representing the item to be collected.
 
 ---
 
 ## Progress class
+## Progress Class
 
-*To be made*
+The `Progress` class represents the progress of a player, including the player's details, nodes, and achievements.
+
+### Constructors
+
+#### `Progress(Player player, vector<Node> nodes = {}, vector<Achievement> achievements = {})`
+
+Creates a `Progress` object with the specified `player`, `nodes`, and `achievements`.
+
+- `player`: A `Player` object representing the player's details.
+- `nodes`: A vector of `Node` objects representing the nodes.
+- `achievements`: A vector of `Achievement` objects representing the achievements.
+
+#### `Progress()`
+
+Creates an empty `Progress` object.
+
+### Destructor
+
+#### `~Progress()`
+
+Destroys the `Progress` object and releases any allocated resources.
+
+### Member Variables
+
+- `public Player player`: A `Player` object representing the player's details.
+- `vector<Node> nodes`: A vector of `Node` objects representing the nodes.
+- `vector<Achievement> achievements`: A vector of `Achievement` objects representing the achievements.
+- `int day`: An integer representing the current day.
+
+### Member Functions
+
+#### `void serialize(Archive &ar, const unsigned int version)`
+
+Serializes the object's fields in order to save and load the progress.
+
+- `ar`: A reference to the `Archive` object.
+- `version`: An unsigned integer representing the version of the serialization format.
+
+Please note that the `serialize` function is necessary to have access to the serialization library.
 
 ---
 
