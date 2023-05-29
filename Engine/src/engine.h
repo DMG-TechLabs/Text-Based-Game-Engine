@@ -8,6 +8,7 @@
 #include "player/player.h"
 #include "progress/progress.h"
 #include "utils/game_utils.h"
+#include "utils/threads.h"
 #include "utils/prompt.h"
 #include "text/text.h"
 #include "map/map.h"
