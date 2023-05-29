@@ -14,13 +14,17 @@ set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_STATIC_RUNTIME OFF) 
 
 # find_package(Boost 1.74.0 )
-find_package(Boost 1.74.0 COMPONENTS serialization REQUIRED)
+# find_package(Boost COMPONENTS serialization REQUIRED)
+find_package(Boost)
 if(Boost_FOUND)
     message("BOOST FOUND !!!!!")
     message("${Boost_LIBRARIES}")
     message("${Boost_INCLUDE_DIRS}")
     message("${boost_serialization_DIR}")
-    include_directories(${Boost_INCLUDE_DIRS}) 
+    include_directories(${Boost_INCLUDE_DIRS})
+    if(WIN32)
+        include_directories(${Boost_INCLUDE_DIRS}/boost/serialization) 
+    endif()
 endif()
     
     # Add source files
@@ -65,6 +69,11 @@ set(SOURCES
 
 # add_executable(TextBasedGameEngine ${SOURCES})
 add_library(TextBasedGameEngine ${SOURCES})
-target_link_libraries(TextBasedGameEngine Boost::serialization)
+if(WIN32)
+    target_link_libraries(TextBasedGameEngine serialization)
+else()
+    target_link_libraries(TextBasedGameEngine Boost::serialization)
+endif()
+
 
 
