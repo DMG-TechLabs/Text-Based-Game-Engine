@@ -474,7 +474,6 @@ Collects the specified `item` and adds it to the player's inventory.
 
 ---
 
-## Progress class
 ## Progress Class
 
 The `Progress` class represents the progress of a player, including the player's details, nodes, and achievements.
