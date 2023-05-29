@@ -48,8 +48,8 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/prompt.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.cpp
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.h
-    ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.cpp
+    # ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.h
+    # ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.cpp
 
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.cpp

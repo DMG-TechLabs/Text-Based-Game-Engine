@@ -44,7 +44,6 @@ class Item {
         {
             ar & name;
             ar & item_id;
-            ar & *commands;
             ar & description;
         }
 

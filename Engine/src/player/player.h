@@ -47,7 +47,6 @@ class Player{
         {
             ar & name;
             ar & stats;
-            ar & commands;
             ar & inventory;
             ar & *currentNode;
         }
