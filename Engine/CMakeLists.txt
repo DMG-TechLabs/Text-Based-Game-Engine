@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(TextBasedGameEngine)
 set(CMAKE_CXX_STANDARD 14)
 
-set(MY_LIBRARY_PATH "./Text-Based-Game-Engine")
+set(MY_LIBRARY_PATH "..")
 
 set(LIB_DIR "Engine/src")
 
@@ -15,8 +15,14 @@ set(Boost_USE_STATIC_RUNTIME OFF)
 
 # find_package(Boost 1.74.0 )
 # find_package(Boost COMPONENTS serialization REQUIRED)
-find_package(Boost)
-if(Boost_FOUND)
+
+if(WIN32)
+    find_package(Boost)
+else()
+    find_package(Boost COMPONENTS serialization REQUIRED)
+endif()
+
+    if(Boost_FOUND)
     message("BOOST FOUND !!!!!")
     message("${Boost_LIBRARIES}")
     message("${Boost_INCLUDE_DIRS}")
