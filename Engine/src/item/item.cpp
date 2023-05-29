@@ -1,5 +1,7 @@
 #include "item.h"
 
+using namespace Engine;
+
 //Setters getters
 void Item::setName(string name){
     this -> name = name;
@@ -23,12 +25,4 @@ void Item::setDescription(string description){
 
 string Item::getDescription(){
     return description;
-}
-
-void Item::setCommands(string *commands){
-    this->commands = commands;
-}
-
-string* Item::getCommands(){
-    return this->commands;
 }

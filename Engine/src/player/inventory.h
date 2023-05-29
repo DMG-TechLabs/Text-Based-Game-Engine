@@ -5,6 +5,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 /**
  * @brief Inventory class
  * 
@@ -13,12 +15,12 @@ class Inventory {
     private:
         //Necessary to have access the serialization library
         friend class boost::serialization::access;
-        vector<Item> items;
+        vector<Item *> items;
 
     public:
         Inventory(){};
         ~Inventory(){};
-        Inventory(vector<Item> items){
+        Inventory(vector<Item *> items){
             this->items = items;
         };
 
@@ -30,12 +32,12 @@ class Inventory {
         }
         
         //Getters
-        vector<Item> getItems();
-        void addItem(Item item);
+        vector<Item *> getItems();
+        void addItem(Item *item);
 
         //Auxilary methods
         Item getItem(string id);
-        int getQuantity(Item item);
+        int getQuantity(Item *item);
         int getQuantity(string id);
         
         //For progress
@@ -44,3 +46,4 @@ class Inventory {
 
         void printInventory();
 };
+}

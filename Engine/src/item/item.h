@@ -6,6 +6,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 class Item {
     private:
         //Necessary to have access the serialization library
@@ -14,7 +16,6 @@ class Item {
         string name;
         string item_id;    
         string description;
-        string *commands = new string[10];
         
     public:
         //Constructors
@@ -36,12 +37,6 @@ class Item {
             this -> description = description;
         }
 
-        Item(string item_id, string name, string description, string *commands){
-            this -> item_id = item_id;
-            this -> name = name;
-            this -> description = description;
-            this -> commands = commands;
-        }
 
         //Necessary function to serialize the object's fields in order to save and load it
         template<class Archive>
@@ -62,8 +57,7 @@ class Item {
 
         void setDescription(string description);
         string getDescription();   
-
-        void setCommands(string *commands);
-        string* getCommands(); 
 };
 
+
+}

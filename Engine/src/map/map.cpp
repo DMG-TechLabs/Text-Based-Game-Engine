@@ -1,11 +1,15 @@
 #include "map.h"
 
-bool exists(vector<int> vector, int s);
+using namespace Engine;
+
+namespace MapUtils{
+    bool exists(vector<int> vector, int s);
+}
 
 void Map::addNode(Node *node, vector<int> connectedTo) {
     vector<Node *> nodesToConnect;
     for (int i = 0; i < nodes.size(); i++) {
-        if (exists(connectedTo, nodes.at(i)->id))
+        if (MapUtils::exists(connectedTo, nodes.at(i)->id))
             nodesToConnect.push_back(nodes.at(i));
     }
 
@@ -29,7 +33,7 @@ Node *Map::getNode(int id) {
 }
 
 
-bool exists(vector<int> vector, int s) {
+bool MapUtils::exists(vector<int> vector, int s) {
     for (size_t i = 0; i < vector.size(); i++) {
         if (vector.at(i) == s) return true;
     }

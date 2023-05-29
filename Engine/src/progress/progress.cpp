@@ -1,5 +1,7 @@
 #include "progress.h"
 
+using namespace Engine;
+
 // unordered_map<std::string, std::string> Save::createHashTable(){
 //     unordered_map<std::string, std::string> u = {
 //         {"inventory", this->inventory->exportContents()},

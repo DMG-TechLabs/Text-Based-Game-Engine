@@ -10,6 +10,9 @@
 
 using namespace std;
 
+namespace Engine{
+
+
 /**
  * @brief Class of the player
  * 
@@ -22,21 +25,18 @@ class Player{
         Inventory inventory;
         string name;
         vector<int> stats;
-        vector<string> commands;
     public:
         Node *currentNode;
         Player(){}
         ~Player(){}
-        Player(Inventory inventory, string name, vector<string> commands, vector<int> stats){
+        Player(Inventory inventory, string name, vector<int> stats){
             this -> inventory = inventory;
             this -> name = name;
-            this -> commands = commands;
             this -> stats = stats;
         }
-        Player(Inventory inventory, string name, vector<string> commands, vector<int> stats, Node *currentNode){
+        Player(Inventory inventory, string name, vector<int> stats, Node *currentNode){
             this -> inventory = inventory;
             this -> name = name;
-            this -> commands = commands;
             this -> stats = stats;
             this -> currentNode = currentNode;
         }
@@ -69,6 +69,6 @@ class Player{
          * @param newNode The node the player tries to move to
          */
         void moveToNode(Node *newNode);
-        void addCommand(string command);
-        void collectItem(Item item);
+        void collectItem(Item *item);
 };
+}

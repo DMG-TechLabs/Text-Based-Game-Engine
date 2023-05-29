@@ -2,27 +2,30 @@
 
 #include <iostream>
 
+using namespace Engine;
 using namespace std;
 
-bool exists(vector<Item> vector, Item item);
+namespace InventoryUtils{
+    bool exists(vector<Item> vector, Item item);
+}
 
 // Getters
-vector<Item> Inventory::getItems() { return items; }
+vector<Item *> Inventory::getItems() { return items; }
 
 Item Inventory::getItem(string id) {
     for (int i = 0; i < 32; i++) {
-        if (items.at(i).getItemId() == id) {
-            return items.at(i);
+        if (items.at(i)->getItemId() == id) {
+            return *items.at(i);
         }
     }
     return {};
 }
 
-int Inventory::getQuantity(Item item) {
+int Inventory::getQuantity(Item *item) {
     int count = 0;
 
-    for (Item i : items) {
-        if (i.getItemId() == item.getItemId()) count++;
+    for (Item *i : items) {
+        if (i->getItemId() == item->getItemId()) count++;
     }
     return count;
 }
@@ -30,22 +33,10 @@ int Inventory::getQuantity(Item item) {
 int Inventory::getQuantity(string id) {
     int count = 0;
 
-    for (Item i : items) {
-        if (i.getItemId() == id) count++;
+    for (Item *i : items) {
+        if (i->getItemId() == id) count++;
     }
     return count;
-}
-
-void Inventory::printInventory() {
-    vector<Item> passed;
-    for (Item i : items) {
-        if (!exists(passed, i)) {
-            cout << "Name: " << i.getName() << ", Id: " << i.getItemId()
-                 << ", Quantity: " << getQuantity(i) 
-                 << ", Description: " << i.getDescription() << endl;
-        }
-        passed.push_back(i);
-    }
 }
 
 // For progress
@@ -55,13 +46,13 @@ string Inventory::exportContents() {
 }
 
 void Inventory::importContents() {}
-void Inventory::addItem(Item item) { items.push_back(item); }
+void Inventory::addItem(Item *item) { items.push_back(item); }
 
 
 
 
 // Utils
-bool exists(vector<Item> vector, Item item) {
+bool InventoryUtils::exists(vector<Item> vector, Item item) {
     for (size_t i = 0; i < vector.size(); i++) {
         if (vector.at(i).getItemId() == item.getItemId()) return true;
     }

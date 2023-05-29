@@ -5,6 +5,8 @@
 
 using namespace std;
 
+namespace Engine{
+
 class Text{
     public:
         static const string normal;
@@ -47,5 +49,8 @@ class Text{
 
         static string color(string where, int color);
         static void delayedTyping(string text);
+        static void clearScreen();
 };
 
+
+}

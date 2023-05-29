@@ -13,6 +13,9 @@ using std::ifstream;
 
 using namespace std;
 
+namespace Engine{
+
+
 void saveToFile(string file_name, string text_data);
 
 string loadFromFile(string file_name);
@@ -28,3 +31,4 @@ void saveProgress(Progress progress, string filename);
 Progress loadProgress(string filename);
 
 //void ThreadworkerFunc();
+}

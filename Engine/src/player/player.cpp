@@ -1,6 +1,19 @@
 #include "player.h"
 #include "inventory.h"
 
+using namespace Engine;
+
+namespace PlayerUtils{
+    bool exists(vector<Node*> vector, Node *node) {
+        for (size_t i = 0; i < vector.size(); i++) {
+            if(vector.at(i)->id == node->id) return true;
+        }
+
+        return false;
+    }
+}
+
+
 //Setters getters
 void Player::setInventory(Inventory inventory){
     this -> inventory = inventory;
@@ -25,13 +38,7 @@ void Player::setCurrentNode(Node *newNode){
     this->currentNode = newNode;
 }
 
-bool exists(vector<Node*> vector, Node *node) {
-    for (size_t i = 0; i < vector.size(); i++) {
-        if(vector.at(i)->id == node->id) return true;
-    }
 
-    return false;
-}
 
 /**
  * @brief Method that moves player to a new node if it is accessible
@@ -46,7 +53,7 @@ void Player::moveToNode(Node *newNode) {
         return;
     }
 
-    if(!exists(this->currentNode->accessible_nodes, newNode)) { // if the new node is not accessible from the current node return (to avoid jumps)
+    if(!PlayerUtils::exists(this->currentNode->accessible_nodes, newNode)) { // if the new node is not accessible from the current node return (to avoid jumps)
         println("The room you want to go is not accessible from your current one");
         return;
     }
@@ -66,10 +73,7 @@ void Player::moveToNode(Node *newNode) {
 
 }
 
-void Player::addCommand(string command){
-    this->commands.push_back(command);
-}
 
-void Player::collectItem(Item item){
+void Player::collectItem(Item *item){
     this->inventory.addItem(item);
 }
