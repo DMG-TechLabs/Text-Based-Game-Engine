@@ -1,18 +1,33 @@
 cmake_minimum_required(VERSION 3.16)
 	
 project(TextBasedGameEngine)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
-set(MY_LIBRARY_PATH "..")
+set(MY_LIBRARY_PATH "./Text-Based-Game-Engine")
 
 set(LIB_DIR "Engine/src")
 
-include_directories(${MY_LIBRARY_PATH}/Engine/boost)
-link_directories(${MY_LIBRARY_PATH}/Engine/boost/stage/lib)
-
 message("Library path: ${MY_LIBRARY_PATH}/${LIB_DIR}")
 
-# Add source files
+set(Boost_USE_STATIC_LIBS OFF) 
+# set(Boost_USE_MULTITHREADED ON)  
+set(Boost_USE_STATIC_RUNTIME OFF) 
+
+# find_package(Boost 1.74.0 )
+# find_package(Boost COMPONENTS serialization REQUIRED)
+find_package(Boost)
+if(Boost_FOUND)
+    message("BOOST FOUND !!!!!")
+    message("${Boost_LIBRARIES}")
+    message("${Boost_INCLUDE_DIRS}")
+    message("${boost_serialization_DIR}")
+    include_directories(${Boost_INCLUDE_DIRS})
+    if(WIN32)
+        include_directories(${Boost_INCLUDE_DIRS}/boost/serialization) 
+    endif()
+endif()
+    
+    # Add source files
 set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/achievements/achievement.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/achievements/achievement.h
@@ -37,6 +52,8 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/prompt.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/game_utils.cpp
+    # ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.h
+    # ${MY_LIBRARY_PATH}/${LIB_DIR}/utils/threads.cpp
 
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/text/text.cpp
@@ -55,8 +72,13 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu_utils.cpp
 )
 
-#add_executable(TextBasedGameEngine ${SOURCES})
+# add_executable(TextBasedGameEngine ${SOURCES})
 add_library(TextBasedGameEngine ${SOURCES})
-target_link_libraries(TextBasedGameEngine ${boost_serialization}) 
+if(WIN32)
+    target_link_libraries(TextBasedGameEngine serialization)
+else()
+    target_link_libraries(TextBasedGameEngine Boost::serialization)
+endif()
+
 
 

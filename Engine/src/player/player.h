@@ -6,6 +6,7 @@
 
 #include "inventory.h"
 #include "../node/node.h"
+#include "../boost_serialization_includes.h"
 
 using namespace std;
 
@@ -18,6 +19,9 @@ namespace Engine{
  */
 class Player{
     private:
+        //Necessary to have access the serialization library
+        friend class boost::serialization::access;
+        
         Inventory inventory;
         string name;
         vector<int> stats;
@@ -36,6 +40,16 @@ class Player{
             this -> name = name;
             this -> stats = stats;
             this -> currentNode = currentNode;
+        }
+
+        //Necessary function to serialize the object's fields in order to save and load it
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & name;
+            ar & stats;
+            ar & inventory;
+            ar & *currentNode;
         }
 
         //Setters getters

@@ -1,4 +1,0 @@
-inventory: inventory here
-day: 3
-achievements: 0,0
-room: 0

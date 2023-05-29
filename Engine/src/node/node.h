@@ -5,6 +5,7 @@
 #include "../player/inventory.h"
 #include "../item/item.h"
 #include "../utils/prompt.h"
+#include "../boost_serialization_includes.h"
 
 using namespace std;
 
@@ -15,6 +16,9 @@ namespace Engine{
  */
 class Node{
     private:
+        //Necessary to have access the serialization library
+        friend class boost::serialization::access;
+        
         bool accessible = false;
 
     public:
@@ -85,6 +89,17 @@ class Node{
             this->accessible = accessible;
             this->id = id;
             this->description = description;
+        }
+
+        //Necessary function to serialize the object's fields in order to save and load it
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & id;
+            ar & description;
+            ar & items;
+            ar & accessible_nodes;
+            ar & accessible;
         }
 
         void setId(int id);
