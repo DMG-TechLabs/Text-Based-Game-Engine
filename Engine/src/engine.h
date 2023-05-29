@@ -12,3 +12,5 @@
 #include "text/text.h"
 #include "map/map.h"
 #include "menu/menu.h"
+#include "mission/mission.h"
+#include "mission/objective.h"

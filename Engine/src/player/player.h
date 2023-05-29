@@ -21,6 +21,7 @@ class Player{
         Inventory inventory;
         string name;
         vector<int> stats;
+        vector<Objective *> objectives;
     public:
         Node *currentNode;
         Player(){}
@@ -43,6 +44,9 @@ class Player{
 
         void setName(string name);
         string getName();
+        
+        void setObjectives(vector<Objective *> objectives);
+        vector<Objective *> getObjectives();
 
         vector<int> getStats();
 

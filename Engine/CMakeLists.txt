@@ -44,6 +44,11 @@ set(SOURCES
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/map/map.h
     
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/mission/mission.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/mission/mission.cpp
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/mission/objective.h
+    ${MY_LIBRARY_PATH}/${LIB_DIR}/mission/objective.cpp
+    
     ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu.h
     ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu.cpp
     ${MY_LIBRARY_PATH}/${LIB_DIR}/menu/menu_utils.h
