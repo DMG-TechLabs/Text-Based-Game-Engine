@@ -12,6 +12,8 @@ class Objective{
         bool completed = false;
     
     public:
+        static const bool COMPLETED = true;
+
         Objective(){}
         ~Objective(){}
 

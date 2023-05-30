@@ -22,5 +22,5 @@ void Objective::printObjectives(vector<Objective *> objectives) {
 }
 
 void Objective::completeObjective(bool check, vector<Objective *> objectives, int index){
-    if(check) objectives.at(index)->setStatus(Mission::COMPLETED);
+    if(check) objectives.at(index)->setStatus(Objective::COMPLETED);
 }
