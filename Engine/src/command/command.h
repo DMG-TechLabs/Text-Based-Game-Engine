@@ -15,6 +15,6 @@ using namespace std;
 namespace Engine {
     class Command{
     public:
-        static void run(Response response, Prompt p, Player *player);
+        static bool run(Response response, Prompt p, Player *player);
     };
 }  // namespace Engine
