@@ -3,12 +3,18 @@
 
 using namespace Engine;
 
-void Engine::saveToFile(string file_name, string text_data){
-    ofstream file;
-    file.open (file_name);
-    file << text_data;
-    file.close();
+bool Engine::saveToFile(string file_path, string content) {
+    std::ofstream file(file_path);
+    
+    if (file.is_open()) {
+        file << content;
+        file.close();
+        return true;
+    } else {
+        return false;
+    }
 }
+
 
 string Engine::loadFromFile(string filepath) {
     string s = "";

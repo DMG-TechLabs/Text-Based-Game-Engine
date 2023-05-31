@@ -16,7 +16,7 @@ using namespace std;
 namespace Engine{
 
 
-void saveToFile(string file_name, string text_data);
+bool saveToFile(string file_path, string content);
 
 string loadFromFile(string file_name);
 
