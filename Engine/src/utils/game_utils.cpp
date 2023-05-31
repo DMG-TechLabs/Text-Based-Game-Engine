@@ -10,14 +10,21 @@ void Engine::saveToFile(string file_name, string text_data){
     file.close();
 }
 
-string Engine::loadFromFile(string file_name){
-    string text_data;
-    ifstream file;
-    file.open (file_name);
-    file >> text_data;
-    file.close();
+string Engine::loadFromFile(string filepath) {
+    string s = "";
+    std::ifstream file(filepath);
+    if (file.is_open()) {
+        // Read data from the file and process it
+        std::string line;
+        while (std::getline(file, line)) {
+            s += line + '\n';
+        }
+        file.close();
+    } else {
+        return "";
+    }
 
-    return text_data;
+    return s;
 }
 
 // template <typename T> 
