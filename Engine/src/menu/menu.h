@@ -6,5 +6,5 @@
 using namespace std;
 
 namespace Engine{
-    void menu(int bgColor, vector<string> options, void (*handleOptionsFunc)(int selectedOption));
+    void menu(string title, int bgColor, vector<string> options, void (*handleOptionsFunc)(int selectedOption));
 }

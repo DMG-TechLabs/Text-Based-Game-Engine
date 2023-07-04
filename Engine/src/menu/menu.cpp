@@ -4,12 +4,12 @@
 
 #include <iostream>
 
-void Engine::menu(int bgColor, vector<string> options, void (*handleOptionsFunc)(int selectedOption)){
+void Engine::menu(string title, int bgColor, vector<string> options, void (*handleOptionsFunc)(int selectedOption)){
     disableInputBuffering();
 
     int numOfOptions = options.size();
 
-    int max = 15;
+    int max = title.size() / 2 + 2;
     int selectedItem = 0;
     bool menuActive = true;
 
@@ -20,6 +20,8 @@ void Engine::menu(int bgColor, vector<string> options, void (*handleOptionsFunc)
 
     while (menuActive) {
         Engine::Text::clearScreen();
+
+        cout << title << endl;
 
         // Print the options
         for (int i = 0; i < numOfOptions; i++){
