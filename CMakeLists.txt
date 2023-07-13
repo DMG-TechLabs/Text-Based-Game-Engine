@@ -79,11 +79,11 @@ set(INCLUDE
 )
 
 # add_executable(TextBasedGameEngine ${SOURCES})
-add_library(TextBasedGameEngine ${SOURCES} ${INCLUDE})
+add_library(${PROJECT_NAME} ${SOURCES} ${INCLUDE})
 if(WIN32)
-    target_link_libraries(TextBasedGameEngine serialization)
+    target_link_libraries(${PROJECT_NAME} serialization)
 else()
-    target_link_libraries(TextBasedGameEngine Boost::serialization)
+    target_link_libraries(${PROJECT_NAME} Boost::serialization)
 endif()
 
 

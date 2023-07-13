@@ -1,5 +1,23 @@
 # Text-Based-Game-Engine
 
+## Usage
+
+1. Clone the repository
+
+    ```bash
+    git clone https://github.com/DMG-TechLabs/Text-Based-Game-Engine --recursive
+    ```
+
+2. In your `CMakeList.txt` file, link the Engine
+
+    ```cmake
+    add_subdirectory(Text-Based-Game-Engine)
+    include_directories(Text-Based-Game-Engine)
+
+    target_link_libraries(${PROJECT_NAME} TextBasedGameEngine)
+    ```
+3. To use the engine include the `engine.h` file
+
 ## Documentation
 
 [Check it here](https://github.com/DMG-TechLabs/Text-Based-Game-Engine/blob/main/Documentation.md)
