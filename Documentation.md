@@ -1,5 +1,7 @@
 # Documentation
 
+For Text, Animations, Sound and Menu see [CliKit](Cli-Kit/Documentation.md)
+
 > All of the below classes, methods and structs are under the `Engine` namespace
 
 ## Achievement Class
@@ -148,35 +150,6 @@ Executes a command by running the specified response, prompt, and player.
 - `void initMap()`: Initializes the map.
 - `Node* getNode(int id)`: Retrieves a node with the specified ID.
 - `void addNode(Node *node, vector<int> connectedTo = {})`: Adds a new node to the map with optional connections to other nodes.
-
----
-
-## Menu method
-
-The `menu` method displays a menu with specified background color, options, and a function pointer to handle the selected option.
-
-```cpp
-void menu(int bgColor, vector<string> options, void (*handleOptionsFunc)(int selectedOption));
-
-```
-
-### Parameters
-
-- `int bgColor`: The background color of the selected item in the menu.
-- `vector<string> options`: A vector containing the menu options.
-- `void (*handleOptionsFunc)(int selectedOption)`: A function pointer to the function that handles the selected option. The function should take an integer parameter representing the selected option.
-
-### Example Usage
-
-```cpp
-void handleMenuOption(int selectedOption) {
-    // Handle the selected menu option
-    // ...
-}
-
-vector<string> menuOptions = {"Option 1", "Option 2", "Option 3"};
-menu(1, menuOptions, handleMenuOption);
-```
 
 ---
 
@@ -515,61 +488,6 @@ Serializes the object's fields in order to save and load the progress.
 - `version`: An unsigned integer representing the version of the serialization format.
 
 Please note that the `serialize` function is necessary to have access to the serialization library.
-
----
-
-## Text Class
-
-The `Text` class provides static members and methods for text formatting and manipulation.
-
-### Static Constants
-
-- `static const string normal`: Normal text formatting.
-- `static const string bold`: Bold text formatting.
-- `static const string underline`: Underline text formatting.
-- `static const string italic`: Italic text formatting.
-- `static const string clear`: Clear formatting.
-- `static const string erase_line`: Erase current line.
-- `static const string black`: Black color.
-- `static const string red`: Red color.
-- `static const string green`: Green color.
-- `static const string yellow`: Yellow color.
-- `static const string blue`: Blue color.
-- `static const string purple`: Purple color.
-- `static const string cyan`: Cyan color.
-- `static const string lgrey`: Light gray color.
-- `static const string dgrey`: Dark gray color.
-- `static const string u_black`: Black color with underline.
-- `static const string u_red`: Red color with underline.
-- `static const string u_green`: Green color with underline.
-- `static const string u_yellow`: Yellow color with underline.
-- `static const string u_blue`: Blue color with underline.
-- `static const string u_purple`: Purple color with underline.
-- `static const string u_cyan`: Cyan color with underline.
-- `static const string u_lgrey`: Light gray color with underline.
-- `static const string u_dgrey`: Dark gray color with underline.
-- `static const string b_black`: Black color with bold.
-- `static const string b_red`: Red color with bold.
-- `static const string b_green`: Green color with bold.
-- `static const string b_yellow`: Yellow color with bold.
-- `static const string b_blue`: Blue color with bold.
-- `static const string b_purple`: Purple color with bold.
-- `static const string b_cyan`: Cyan color with bold.
-- `static const string b_lgrey`: Light gray color with bold.
-- `static const string b_dgrey`: Dark gray color with bold.
-
-### Static Methods
-
-- `static string color(string where, int color)`: Applies the specified color to the given text.
-
-where: "fg" or "bg"
-
-color: 0-255
-
-![47952855-ecb12480-df75-11e8-89d4-ac26c50e80b9](https://github.com/DMG-TechLabs/Text-Based-Game/assets/63654361/4885e933-066b-458a-924b-db07df25f975)
-
-- `static void delayedTyping(string text)`: Prints the text with a delayed typing effect.
-- `static void clearScreen()`: Clears the screen.
 
 ---
 
