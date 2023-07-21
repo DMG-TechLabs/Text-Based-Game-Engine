@@ -9,8 +9,9 @@
 #include "include/progress.h"
 #include "include/game_utils.h"
 #include "include/prompt.h"
-#include "include/text.h"
 #include "include/map.h"
-#include "include/menu.h"
 #include "include/mission.h"
 #include "include/objective.h"
+
+#include "Cli-Kit/cli_kit.h"
+

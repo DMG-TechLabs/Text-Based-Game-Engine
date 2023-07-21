@@ -2,6 +2,8 @@
 
 #include "../../engine.h"
 
+using namespace CliKit;
+
 void Objective::setDescription(string description) {
     this->description = description;
 }
@@ -13,10 +15,10 @@ void Objective::setStatus(bool completed) { this->completed = completed; }
 bool Objective::isCompleted() { return completed; }
 
 void Objective::printObjectives(vector<Objective *> objectives) {
-    Engine::println("\n-" + Engine::Text::yellow + "Current Objectives" + Engine::Text::normal + "-");
+    Engine::println("\n-" + Text::yellow + "Current Objectives" + Text::normal + "-");
     for (int i = 0; i < objectives.size(); i++) {
-        (objectives.at(i)->isCompleted()) ? Engine::println(Engine::Text::green + objectives.at(i)->getDescription() + Engine::Text::normal, 1)
-                                          : Engine::println(Engine::Text::red + objectives.at(i)->getDescription() + Engine::Text::normal, 1);
+        (objectives.at(i)->isCompleted()) ? Engine::println(Text::green + objectives.at(i)->getDescription() + Text::normal, 1)
+                                          : Engine::println(Text::red + objectives.at(i)->getDescription() + Text::normal, 1);
     }
     Engine::println("", 0);
 }

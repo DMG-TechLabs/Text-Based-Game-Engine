@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 	
 project(TextBasedGameEngine)
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(Boost_USE_STATIC_LIBS OFF) 
 # set(Boost_USE_MULTITHREADED ON)  
@@ -24,6 +25,9 @@ if(Boost_FOUND)
     endif()
 endif()
 
+add_subdirectory(Cli-Kit)
+include_directories(Cli-Kit)
+
 include_directories(include)
 
 # Add source files
@@ -44,15 +48,10 @@ set(SOURCES
     src/utils/game_utils.cpp
     # src/utils/threads.cpp
 
-    src/text/text.cpp
-
     src/map/map.cpp
     
     src/mission/mission.cpp
     src/mission/objective.cpp
-    
-    src/menu/menu.cpp
-    src/menu/menu_utils.cpp
 )
 
 set(INCLUDE
@@ -69,17 +68,16 @@ set(INCLUDE
     include/prompt.h
     include/game_utils.h
     # include/threads.h
-    include/text.h
     include/map.h
     include/mission.h
     include/objective.h
-    include/menu.h
-    include/menu_utils.h
-    
 )
 
 # add_executable(TextBasedGameEngine ${SOURCES})
 add_library(${PROJECT_NAME} ${SOURCES} ${INCLUDE})
+
+target_link_libraries(${PROJECT_NAME} CliKit)
+
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} serialization)
 else()

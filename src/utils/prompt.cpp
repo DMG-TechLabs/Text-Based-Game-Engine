@@ -6,8 +6,9 @@
 
 #include "command.h"
 #include "item.h"
-#include "text.h"
+#include "cli_kit.h"
 
+using namespace CliKit;
 using namespace Engine;
 
 /* ============={Utils}============= */
