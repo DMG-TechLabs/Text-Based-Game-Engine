@@ -24,6 +24,18 @@ void Objective::printObjectives(vector<Objective *> objectives) {
     Engine::println("", 0);
 }
 
-void Objective::completeObjective(bool check, vector<Objective *> objectives, int index){
+bool Objective::completeObjective(bool check, vector<Objective *> objectives, int index){
+    if(
+        check && 
+        objectives.at(index)->parent != nullptr && 
+        !objectives.at(index)->parent->isCompleted() 
+    ){
+        cout << "First complete: " << objectives.at(index)->parent->getDescription() << endl;
+        return false;
+    }
+
     if(check) objectives.at(index)->setStatus(Objective::COMPLETED);
+    return true;
 }
+
+    

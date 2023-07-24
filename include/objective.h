@@ -29,5 +29,5 @@ class Objective{
         bool isCompleted();
 
         static void printObjectives(vector<Objective *> objectives);
-        static void completeObjective(bool check, vector<Objective *> objectives, int index);
+        static bool completeObjective(bool check, vector<Objective *> objectives, int index);
 };
