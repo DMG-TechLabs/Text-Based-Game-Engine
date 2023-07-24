@@ -34,8 +34,12 @@ bool Objective::completeObjective(bool check, vector<Objective *> objectives, in
         return false;
     }
 
-    if(check) objectives.at(index)->setStatus(Objective::COMPLETED);
-    return true;
+    if(check) {
+		objectives.at(index)->setStatus(Objective::COMPLETED);
+		return true;
+	}
+
+	return false;
 }
 
     
