@@ -1,6 +1,7 @@
 #include "objective.h"
 
 #include "../../engine.h"
+#include <string>
 
 using namespace CliKit;
 
@@ -17,8 +18,8 @@ bool Objective::isCompleted() { return completed; }
 void Objective::printObjectives(vector<Objective *> objectives) {
     Engine::println("\n-" + Text::yellow + "Current Objectives" + Text::normal + "-");
     for (int i = 0; i < objectives.size(); i++) {
-        (objectives.at(i)->isCompleted()) ? Engine::println(Text::green + objectives.at(i)->getDescription() + Text::normal, 1)
-                                          : Engine::println(Text::red + objectives.at(i)->getDescription() + Text::normal, 1);
+        (objectives.at(i)->isCompleted()) ? Engine::println(Text::green + to_string(i+1) + ". " + objectives.at(i)->getDescription() + Text::normal, 1)
+                                          : Engine::println(Text::red + + to_string(i+1) + ". " + objectives.at(i)->getDescription() + Text::normal, 1);
     }
     Engine::println("", 0);
 }
