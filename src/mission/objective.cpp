@@ -24,6 +24,8 @@ void Objective::printObjectives(vector<Objective *> objectives) {
     Engine::println("", 0);
 }
 
+
+// Returns true when the objective is completed after its parent of if the check is false
 bool Objective::completeObjective(bool check, vector<Objective *> objectives, int index){
     if(
         check && 
@@ -39,7 +41,7 @@ bool Objective::completeObjective(bool check, vector<Objective *> objectives, in
 		return true;
 	}
 
-	return false;
+	return true;
 }
 
     
