@@ -13,6 +13,7 @@ class Objective{
     
     public:
         static const bool COMPLETED = true;
+        Objective *parent = nullptr;
 
         Objective(){}
         ~Objective(){}
