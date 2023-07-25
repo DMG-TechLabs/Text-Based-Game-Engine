@@ -7,9 +7,9 @@
 // #include "game_utils.h"
 
 #include <string>
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
-#include <boost/serialization/vector.hpp>
+// #include <boost/archive/text_oarchive.hpp>
+// #include <boost/archive/text_iarchive.hpp>
+// #include <boost/serialization/vector.hpp>
 // #include <unordered_map>
 // #include <ctime>
 // #include <bits/stdc++.h>
@@ -45,7 +45,7 @@ namespace Engine{
 
 class Progress{
     public:
-        friend class boost::serialization::access;
+        // friend class boost::serialization::access;
         Player player;
         vector<Node> nodes;
         vector<Achievement> achievements;
@@ -57,6 +57,7 @@ class Progress{
         Progress(){}
         ~Progress(){}
         int day;
+/*
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
         {
@@ -64,6 +65,7 @@ class Progress{
             ar & nodes;
             ar & achievements;
         }
+ */
 
 };
 }
