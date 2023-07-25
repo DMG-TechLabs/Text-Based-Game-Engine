@@ -7,7 +7,7 @@
 #include "inventory.h"
 #include "mission.h"
 #include "node.h"
-#include "boost_serialization_includes.h"
+// #include "boost_serialization_includes.h"
 
 using namespace std;
 
@@ -21,7 +21,7 @@ namespace Engine{
 class Player{
     private:
         //Necessary to have access the serialization library
-        friend class boost::serialization::access;
+        // friend class boost::serialization::access;
 
         Inventory inventory;
         string name;
@@ -43,6 +43,7 @@ class Player{
             this -> currentNode = currentNode;
         }
 
+/*
         //Necessary function to serialize the object's fields in order to save and load it
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
@@ -52,6 +53,7 @@ class Player{
             ar & inventory;
             ar & *currentNode;
         }
+*/
 
         //Setters getters
         void setInventory(Inventory inventory);

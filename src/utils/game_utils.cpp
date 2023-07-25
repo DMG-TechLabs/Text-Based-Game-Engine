@@ -59,16 +59,19 @@ string Engine::loadFromFile(string filepath) {
 // }
 
 void Engine::saveProgress(Progress progress, string filename){
-    ofstream ofs(filename);
+   /*
+   ofstream ofs(filename);
     {
         boost::archive::text_oarchive oa(ofs);
         // write class instance to archive
         oa << progress;
     	// archive and stream closed when destructors are called
     }
+   */ 
 }
 
 Progress Engine::loadProgress(string filename){
+	/*
     Progress loaded_progress;
     ifstream ifs(filename);
     {
@@ -77,6 +80,7 @@ Progress Engine::loadProgress(string filename){
     }
 
     return loaded_progress;
+	*/
 }
 
 // void thr(){

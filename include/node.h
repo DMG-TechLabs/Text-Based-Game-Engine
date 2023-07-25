@@ -3,7 +3,7 @@
 #include "inventory.h"
 #include "item.h"
 #include "prompt.h"
-#include "boost_serialization_includes.h"
+// #include "boost_serialization_includes.h"
 
 #include <string>
 #include <vector>
@@ -18,7 +18,7 @@ namespace Engine{
 class Node{
     private:
         //Necessary to have access the serialization library
-        friend class boost::serialization::access;
+        // friend class boost::serialization::access;
         
         bool accessible = false;
 
@@ -92,6 +92,7 @@ class Node{
             this->description = description;
         }
 
+/*
         //Necessary function to serialize the object's fields in order to save and load it
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
@@ -102,6 +103,7 @@ class Node{
             ar & accessible_nodes;
             ar & accessible;
         }
+*/
 
         void setId(int id);
         void setDescription(string description);

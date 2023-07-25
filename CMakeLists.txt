@@ -4,9 +4,9 @@ project(TextBasedGameEngine)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(Boost_USE_STATIC_LIBS OFF) 
+# set(Boost_USE_STATIC_LIBS OFF) 
 # set(Boost_USE_MULTITHREADED ON)  
-set(Boost_USE_STATIC_RUNTIME OFF) 
+# set(Boost_USE_STATIC_RUNTIME OFF) 
 
 # find_package(Boost 1.74.0 )
 # find_package(Boost COMPONENTS serialization REQUIRED)
@@ -78,11 +78,11 @@ add_library(${PROJECT_NAME} ${SOURCES} ${INCLUDE})
 
 target_link_libraries(${PROJECT_NAME} CliKit)
 
-if(WIN32)
-    target_link_libraries(${PROJECT_NAME} serialization)
-else()
-    target_link_libraries(${PROJECT_NAME} Boost::serialization)
-endif()
+# if(WIN32)
+    # target_link_libraries(${PROJECT_NAME} serialization)
+# else()
+    # target_link_libraries(${PROJECT_NAME} Boost::serialization)
+# endif()
 
 
 
