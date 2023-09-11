@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "boost_serialization_includes.h"
+#include "boost_serialization_includes.h"
 
 #include <string>
 #include <vector>  
@@ -12,7 +12,7 @@ namespace Engine{
 class Item {
     private:
         //Necessary to have access the serialization library
-        //friend class boost::serialization::access;
+        friend class boost::serialization::access;
 
         string name;
         string item_id;    
@@ -38,7 +38,7 @@ class Item {
             this -> description = description;
         }
 
-/*
+
         //Necessary function to serialize the object's fields in order to save and load it
         template<class Archive>
         void serialize(Archive & ar, const unsigned int version)
@@ -47,7 +47,6 @@ class Item {
             ar & item_id;
             ar & description;
         }
-*/
 
         //Setters getters
         void setName(string name);
