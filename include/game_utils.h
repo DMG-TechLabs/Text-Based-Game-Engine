@@ -32,4 +32,10 @@ void saveProgress(Progress progress, string filename);
 Progress loadProgress(string filename);
 
 //void ThreadworkerFunc();
+bool deleteFile(string path);
+
+std::string getExecutablePath();
+std::string getProjectPath();
+
 }
+
